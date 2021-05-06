@@ -40,7 +40,8 @@
     <input id="path" autocomplete="off" />
     <button onclick="save()">Save</button>
   </div>
-  <a href="./babylon" >Baby</a>
+  <!-- <a href="./babylon" >Baby</a> -->
+  <a href="https://scenaristeur.github.io/ipgs/" target="_blank">WAnt to CReate BIg MindMaps ? TRy me</a>
 
   <div class="wrapper">
     <ul id="messages"></ul>
@@ -176,10 +177,15 @@
   // https://visjs.github.io/vis-network/docs/network/#methodManipulation
 
   function add(item){
+    let color = '#55D5E0'
+    let label = item.path.split('\\').pop()
     nodes.add([{
-      id: item.path, label:item.path.split('\\').pop(), color:'#55D5E0', type: 'file'
+      id: item.path, label:label, color:color, type: 'file'
     }])
     linkContainer(item)
+    if (label.startsWith('#')){
+      socket.emit('read file', item.path);
+    }
 
   }
   function addDir(item){
