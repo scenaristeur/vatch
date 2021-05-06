@@ -1,0 +1,428 @@
+{
+  "nodes": [
+    {
+      "id": "#Univers",
+      "label": "Universe",
+      "color": {
+        "background": "#1FBC9C",
+        "border": "#2B7CE9"
+      },
+      "shape": "circle",
+      "built": true
+    },
+    {
+      "id": "#Galaxy",
+      "label": "Galaxy",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Planetary_System",
+      "label": "Planetary System",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Planet",
+      "label": "Planet",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Continent",
+      "label": "Continent",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Country",
+      "label": "Country",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Region",
+      "label": "Region",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Departement",
+      "label": "Departement",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Agglomeration",
+      "label": "Agglomeration",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Arrondissement",
+      "label": "Arrondissement",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Quartier",
+      "label": "Quartier",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Paté_/_Lotissement",
+      "label": "Paté / Lotissement",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Residence",
+      "label": "Residence",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Immeuble",
+      "label": "Immeuble",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Etage",
+      "label": "Etage",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Appartment",
+      "label": "Appartment",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Piece",
+      "label": "Piece",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Person",
+      "label": "Person",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Object",
+      "label": "Object",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Material",
+      "label": "Material",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Molecule",
+      "label": "Molecule",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Atom",
+      "label": "Atom",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Proton",
+      "label": "Proton",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Quark",
+      "label": "Quark",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Neutron",
+      "label": "Neutron",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Electron",
+      "label": "Electron",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    }
+  ],
+  "edges": [
+    {
+      "from": "#Univers",
+      "to": "#Galaxy",
+      "label": "hasPart",
+      "id": "51f1da68-2609-4887-a859-540e46a6c2e5"
+    },
+    {
+      "from": "#Galaxy",
+      "to": "#Planetary_System",
+      "label": "hasPart",
+      "id": "36887566-843d-4898-a713-9fe8a07ec006"
+    },
+    {
+      "from": "#Planetary_System",
+      "to": "#Planet",
+      "label": "hasPart",
+      "id": "29209075-8262-4705-ac3e-e136fecf2436"
+    },
+    {
+      "from": "#Planet",
+      "to": "#Continent",
+      "label": "hasPart",
+      "id": "6422f4de-ce17-49bd-b705-88359f6e084d"
+    },
+    {
+      "from": "#Continent",
+      "to": "#Country",
+      "label": "hasPart",
+      "id": "b90fe698-2985-4463-91e4-2e5bb77478a7"
+    },
+    {
+      "from": "#Country",
+      "to": "#Region",
+      "label": "hasPart",
+      "id": "9e363f9e-b576-4c02-8f5e-700e541ab664"
+    },
+    {
+      "from": "#Region",
+      "to": "#Departement",
+      "label": "hasPart",
+      "id": "0ecccde1-b751-482f-bbe0-e0f177cd91d6"
+    },
+    {
+      "from": "#Departement",
+      "to": "#Agglomeration",
+      "label": "hasPart",
+      "id": "91c808f0-45e4-48e2-99b3-b176eb85640b"
+    },
+    {
+      "from": "#Agglomeration",
+      "to": "#Arrondissement",
+      "label": "hasPart",
+      "id": "1fcf9f7c-3566-460f-92bd-c89af5d912b1"
+    },
+    {
+      "from": "#Arrondissement",
+      "to": "#Quartier",
+      "label": "hasPart",
+      "id": "7db038db-18cd-4c68-b890-a25393876d0c"
+    },
+    {
+      "from": "#Quartier",
+      "to": "#Paté_/_Lotissement",
+      "label": "hasPart",
+      "id": "1db9d897-90c5-4082-a467-3f205a36c2f9"
+    },
+    {
+      "from": "#Paté_/_Lotissement",
+      "to": "#Residence",
+      "label": "hasPart",
+      "id": "fabff80d-cc07-4e50-a00c-695150a6ce7c"
+    },
+    {
+      "from": "#Residence",
+      "to": "#Immeuble",
+      "label": "hasPart",
+      "id": "9289b4f3-a6be-4f94-a2bf-b269efba6f7b"
+    },
+    {
+      "from": "#Immeuble",
+      "to": "#Etage",
+      "label": "hasPart",
+      "id": "ca11101f-df62-4fbd-a2a2-8bc4ea9b3c8d"
+    },
+    {
+      "from": "#Etage",
+      "to": "#Appartment",
+      "label": "hasPart",
+      "id": "41398f66-c5dd-44c1-9558-e891cd94b1d9"
+    },
+    {
+      "from": "#Appartment",
+      "to": "#Piece",
+      "label": "hasPart",
+      "id": "5563c9dd-76aa-4b20-9c4f-93d59079e0c9"
+    },
+    {
+      "from": "#Piece",
+      "to": "#Person",
+      "label": "contains",
+      "id": "f93c6379-6fa9-4bf8-97f2-6d38931ff716"
+    },
+    {
+      "from": "#Piece",
+      "to": "#Object",
+      "label": "contains",
+      "id": "efd82936-8453-48d5-ad44-72d3eefe176d"
+    },
+    {
+      "from": "#Object",
+      "to": "#Material",
+      "label": "hasPart",
+      "id": "1d48d4c5-fa44-4d94-9f8c-72a4decf1b3c"
+    },
+    {
+      "from": "#Person",
+      "to": "#Material",
+      "label": "hasPart",
+      "id": "bedbed36-960e-4c90-8db5-f05c1104b670"
+    },
+    {
+      "from": "#Material",
+      "to": "#Molecule",
+      "label": "hasPart",
+      "id": "11bab75b-42ca-457e-8178-9f3c135e3abc"
+    },
+    {
+      "from": "#Molecule",
+      "to": "#Atom",
+      "label": "hasPart",
+      "id": "3b57cf31-2232-45e3-a3fa-e910ec9001ba"
+    },
+    {
+      "from": "#Atom",
+      "to": "#Proton",
+      "label": "hasPart",
+      "id": "faca795a-3329-4ff3-93db-af9c32ccccfb"
+    },
+    {
+      "from": "#Proton",
+      "to": "#Quark",
+      "label": "hasPart",
+      "id": "e9726b61-5700-43ec-95e0-521d559862d8"
+    },
+    {
+      "from": "#Atom",
+      "to": "#Neutron",
+      "label": "hasPart",
+      "id": "ac21bf08-3bc1-4be8-b421-890d372b0263"
+    },
+    {
+      "from": "#Neutron",
+      "to": "#Quark",
+      "label": "hasPart",
+      "id": "b3962aae-24ee-4dd0-9c33-4019bfb3fefe"
+    },
+    {
+      "from": "#Atom",
+      "to": "#Electron",
+      "label": "hasPart",
+      "id": "0d575da3-24be-489a-a777-d138a747f648"
+    }
+  ]
+}
