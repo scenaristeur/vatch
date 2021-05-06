@@ -33,7 +33,46 @@ io.on('connection', (socket) => {
   socket.emit('watcher event', watcher.paths)
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg); //envoyer à tout le monde
+    if(msg.startsWith('data')){
+      console.log(msg)
+      if (msg.endsWith('\\')){
+        try {
+          if (!fs.existsSync(msg)) {
+            fs.mkdirSync(msg)
+          }
+        } catch (err) {
+          console.error(err)
+        }
+      }else{
+        try {
+          if (!fs.existsSync(msg)) {
+            fs.writeFile(msg, "", (err) => {
+              if (err) throw err;
+              console.log("The blank file was succesfully saved!");
+            });
+          }
+        } catch (err) {
+          console.error(err)
+        }
+
+      }
+    }
   });
+
+  socket.on('write file', (msg) => {
+    console.log(msg)
+    io.emit('chat message', msg.path); //envoyer à tout le monde
+    if(msg.path.startsWith('data')){
+      fs.writeFile(msg.path, msg.content, (err) => {
+        if (err) throw err;
+        console.log("The file was succesfully saved!");
+      });
+    }
+  });
+
+
+
+
   socket.on('read file', (f) => {
     console.log(f)
     readFile(f, socket)

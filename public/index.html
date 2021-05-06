@@ -33,9 +33,13 @@
 </head>
 <body>
   <div id="mynetwork"></div>
-  <textarea id="content" style="position:absolute;top:10px;right:10px" rows="25" cols="50">
-
-  </textarea>
+  <div style="position:absolute;top:10px;right:10px">
+    <textarea id="content" rows="25" cols="50">
+    </textarea>
+    <br>
+    <input id="path" autocomplete="off" />
+    <button onclick="save()">Save</button>
+  </div>
   <a href="./babylon" >Baby</a>
 
   <div class="wrapper">
@@ -82,6 +86,13 @@
     }
   });
 
+  function save(){
+    let content = document.getElementById("content").value
+    let path = document.getElementById("path").value
+    console.log(path, content)
+    socket.emit('write file', {path: path, content: content});
+  }
+
   socket.on('chat message', function(msg) {
     var item = document.createElement('li');
     item.textContent = msg;
@@ -116,7 +127,8 @@
     }
 
     try{
-      document.getElementById("content").innerHTML = msg.content
+      document.getElementById("path").value = msg.path
+      document.getElementById("content").value = msg.content
       if (msg.type == "application/json" || msg.ext =="json"){
         msg.content = JSON.parse(msg.content)
       }
@@ -136,7 +148,6 @@
       switch (item.event) {
         case "add":
         add(item)
-
         break;
         case "addDir":
         addDir(item)
@@ -149,6 +160,9 @@
         case "unlinkDir":
         unlinkDir(item)
         unlinkContainer(item)
+        break;
+        case "change":
+        change(item)
         break;
         default:
 
@@ -207,15 +221,27 @@
     }
   }
 
+  function change(item){
+    let n = nodes.get(item.path)
+    n.shape = "star"
+    nodes.update(n)
+  }
+
   // network events
   network.on('selectNode', evt => {
     let n_id = evt.nodes[0]
+    input.value = n_id
     let n = nodes.get(n_id);
-    console.log(n)
     if (n.type == 'file'){
       socket.emit('read file', n.id);
+      n.shape = "ellipse"
+      nodes.update(n)
+    }else if (n.type == "folder"){
+      n.shape = "box"
+      nodes.update(n)
     }
   })
+
 
 
   </script>

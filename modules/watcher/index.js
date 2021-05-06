@@ -1,20 +1,31 @@
-const chokidar = require('chokidar');
+
+const fs = require('fs')
+const chokidar = require('chokidar')
 
 class Watcher {
   constructor(io, root) {
     this.paths = []
-    let folder = root || './data'
+    this.root= root || './data'
+    this.init(this.root)
     // One-liner for current directory
-    chokidar.watch(folder).on('all', (event, path) => {
+    chokidar.watch(root).on('all', (event, path) => {
       let p = {event: event, path: path}
       this.paths.push(p)
       io.emit('watcher event', [{event: event, path: path}]);
       //  console.log(this.paths)
     });
+    
   }
 
-  setIo(io){
-    this.io = io
+  init(root){
+    try {
+      if (!fs.existsSync(root)) {
+        fs.mkdirSync(root)
+      }
+    } catch (err) {
+      console.error(err)
+    }
+
   }
 
 }
