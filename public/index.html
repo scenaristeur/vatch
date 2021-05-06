@@ -33,6 +33,9 @@
 </head>
 <body>
   <div id="mynetwork"></div>
+  <textarea id="content" style="position:absolute;top:10px;right:10px" rows="25" cols="50">
+
+  </textarea>
   <a href="./babylon" >Baby</a>
 
   <div class="wrapper">
@@ -93,6 +96,39 @@
     messages.appendChild(item);
     window.scrollTo(0, document.body.scrollHeight);
   });
+
+  socket.on('cat file', function(msg) {
+    var item = document.createElement('li');
+    item.textContent = msg;
+    messages.appendChild(item);
+    window.scrollTo(0, document.body.scrollHeight);
+
+    processFile(msg)
+  });
+
+  function processFile(msg){
+    if(msg.error){
+      alert("Error: ",msg.error)
+      return
+    }
+    if (msg.type == undefined){
+      msg.ext = msg.path.split('.').pop()
+    }
+
+    try{
+      document.getElementById("content").innerHTML = msg.content
+      if (msg.type == "application/json" || msg.ext =="json"){
+        msg.content = JSON.parse(msg.content)
+      }
+      console.log(msg)
+      msg.content.nodes != undefined ? nodes.update(msg.content.nodes) : ""
+      msg.content.edges != undefined ? edges.update(msg.content.edges) : ""
+
+    }catch(e){
+      console.log(e)
+    }
+
+  }
 
   function process(msg){
     console.log(msg)
@@ -170,6 +206,17 @@
       edges.remove(edges_to_remove)
     }
   }
+
+  // network events
+  network.on('selectNode', evt => {
+    let n_id = evt.nodes[0]
+    let n = nodes.get(n_id);
+    console.log(n)
+    if (n.type == 'file'){
+      socket.emit('read file', n.id);
+    }
+  })
+
 
   </script>
 </body>
