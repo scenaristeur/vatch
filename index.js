@@ -1,5 +1,13 @@
 // root is the root folder you want to use
 let root = './data'
+
+const path = require('path');
+console.log(path.sep)
+if (path.sep === "\\") {
+console.log("Windows");
+} else {
+console.log("Not Windows");
+}
 // const Io = require('./modules/io')
 // let custom_io = new Io()
 //
@@ -29,13 +37,13 @@ io.on('connection', (socket) => {
 
   console.log('a user connected');
   socket.broadcast.emit('chat message', 'A new user'); //envoyer à tous les autres
-  socket.emit('chat message', 'hi'); //envoyer au nouveau
+  socket.emit('init', {pathsep: path.sep, message: "hi"}); //envoyer au nouveau
   socket.emit('watcher event', watcher.paths)
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg); //envoyer à tout le monde
     if(msg.startsWith('data')){
       console.log(msg)
-      if (msg.endsWith('\\')){
+      if (msg.endsWith(path.sep)){
         try {
           if (!fs.existsSync(msg)) {
             fs.mkdirSync(msg)
@@ -83,7 +91,7 @@ io.on('connection', (socket) => {
 });
 
 async function readFile(f, socket){
-  let type = await FileType.fromFile('.\\'+f)
+  let type = await FileType.fromFile('.'+path.sep+f)
   console.log(type);
 
   //let content = fs.readFileSync(f, 'utf8')

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Socket.IO chat</title>
+  <title>Vatch is vatching your system</title>
   <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 
   <style type="text/css">
@@ -53,6 +53,10 @@
   <script src="/socket.io/socket.io.js"></script>
   <script>
 
+  //init
+  pathsep='/' //  ... / for linux, \\ for Windows
+
+
   // create an array with nodes
   var nodes = new vis.DataSet([]);
 
@@ -93,6 +97,14 @@
     console.log(path, content)
     socket.emit('write file', {path: path, content: content});
   }
+
+  socket.on('init', function(init) {
+    pathsep = init.pathsep
+    var item = document.createElement('li');
+    item.textContent = init.msg;
+    messages.appendChild(item);
+    window.scrollTo(0, document.body.scrollHeight);
+  });
 
   socket.on('chat message', function(msg) {
     var item = document.createElement('li');
@@ -178,7 +190,7 @@
 
   function add(item){
     let color = '#55D5E0'
-    let label = item.path.split('\\').pop()
+    let label = item.path.split(pathsep).pop()
     nodes.add([{
       id: item.path, label:label, color:color, type: 'file'
     }])
@@ -189,7 +201,7 @@
 
   }
   function addDir(item){
-    let p = item.path.split('\\')
+    let p = item.path.split(pathsep)
     let color = p.length == 1 ? '#F26619' : '#F6B12D'
     nodes.add([{
       id: item.path, label:p.pop(),shape: 'box', color: color, type: 'folder'
@@ -203,21 +215,21 @@
     nodes.remove(item.path);
   }
   function linkContainer(item){
-    let splitted = item.path.split('\\')
+    let splitted = item.path.split(pathsep)
     if (splitted.length > 1){
       let to = item.path
       splitted.pop()
-      let from = splitted.join('\\')
+      let from = splitted.join(pathsep)
       let edge = {from: from, to: to, label: "contains"}
       edges.add([edge])
     }
   }
   function unlinkContainer(item){
-    let splitted = item.path.split('\\')
+    let splitted = item.path.split(pathsep)
     if (splitted.length > 1){
       let to = item.path
       splitted.pop()
-      let from = splitted.join('\\')
+      let from = splitted.join(pathsep)
       let edges_to_remove =  edges.get({
         filter: function (e) {
           return e.from == from && e.to == to && e.label == "contains";

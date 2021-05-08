@@ -1,0 +1,382 @@
+{
+  "@context": {
+    "schem": "http://schema.org/",
+    "solid": "http://www.w3.org/ns/solid/terms#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "acl": "http://www.w3.org/ns/auth/acl#",
+    "ldp": "http://www.w3.org/ns/ldp#",
+    "sp": "http://www.w3.org/ns/pim/space#",
+    "c": {
+      "@id": "https://spoggy-test.solidcommunity.net/profile/card#"
+    },
+    "c0": "https://spoggy-test2.solidcommunity.net/profile/card#",
+    "c1": "https://spoggy-test3.solidcommunity.net/profile/card#",
+    "c2": {
+      "@id": "https://spoggy-test4.solidcommunity.net/profile/card#"
+    },
+    "c3": {
+      "@id": "https://spoggy-test5.solidcommunity.net/profile/card#"
+    },
+    "c4": {
+      "@id": "https://spoggy-test6.solidcommunity.net/profile/card#"
+    },
+    "c5": {
+      "@id": "https://spoggy-test7.solidcommunity.net/profile/card#"
+    },
+    "c6": {
+      "@id": "https://spoggy-test8.solidcommunity.net/profile/card#"
+    },
+    "pro": {
+      "@id": "https://spoggy-test9.solidcommunity.net/profile/"
+    },
+    "inbox": {
+      "@id": "https://spoggy-test9.solidcommunity.net/inbox/"
+    },
+    "settings": {
+      "@id": "https://spoggy-test9.solidcommunity.net/inbox/"
+    },
+    "spo": {
+      "@id": "https://spoggy-test9.solidcommunity.net/"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "_:b97__g_L29C1212",
+      "acl:mode": [
+        {
+          "@id": "acl:Append"
+        },
+        {
+          "@id": "acl:Control"
+        },
+        {
+          "@id": "acl:Read"
+        },
+        {
+          "@id": "acl:Write"
+        }
+      ],
+      "acl:origin": {
+        "@id": "http://127.0.0.1:8080"
+      }
+    },
+    {
+      "@id": "_:b97__g_L33C1357",
+      "acl:mode": [
+        {
+          "@id": "acl:Append"
+        },
+        {
+          "@id": "acl:Control"
+        },
+        {
+          "@id": "acl:Read"
+        },
+        {
+          "@id": "acl:Write"
+        }
+      ],
+      "acl:origin": {
+        "@id": "http://localhost:8080"
+      }
+    },
+    {
+      "@id": "_:b97__g_L37C1502",
+      "acl:mode": [
+        {
+          "@id": "acl:Append"
+        },
+        {
+          "@id": "acl:Control"
+        },
+        {
+          "@id": "acl:Read"
+        },
+        {
+          "@id": "acl:Write"
+        }
+      ],
+      "acl:origin": {
+        "@id": "http://localhost:9000"
+      }
+    },
+    {
+      "@id": "_:b97__g_L41C1647",
+      "acl:mode": [
+        {
+          "@id": "acl:Append"
+        },
+        {
+          "@id": "acl:Control"
+        },
+        {
+          "@id": "acl:Read"
+        },
+        {
+          "@id": "acl:Write"
+        }
+      ],
+      "acl:origin": {
+        "@id": "https://drive.owntech.io"
+      }
+    },
+    {
+      "@id": "_:b97__g_L45C1795",
+      "acl:mode": [
+        {
+          "@id": "acl:Append"
+        },
+        {
+          "@id": "acl:Control"
+        },
+        {
+          "@id": "acl:Read"
+        },
+        {
+          "@id": "acl:Write"
+        }
+      ],
+      "acl:origin": {
+        "@id": "https://harrystminrupt.inrupt.net"
+      }
+    },
+    {
+      "@id": "_:b97__g_L49C1952",
+      "acl:mode": [
+        {
+          "@id": "acl:Append"
+        },
+        {
+          "@id": "acl:Control"
+        },
+        {
+          "@id": "acl:Read"
+        },
+        {
+          "@id": "acl:Write"
+        }
+      ],
+      "acl:origin": {
+        "@id": "https://itme.online"
+      }
+    },
+    {
+      "@id": "_:b97__g_L53C2095",
+      "acl:mode": [
+        {
+          "@id": "acl:Append"
+        },
+        {
+          "@id": "acl:Control"
+        },
+        {
+          "@id": "acl:Read"
+        },
+        {
+          "@id": "acl:Write"
+        }
+      ],
+      "acl:origin": {
+        "@id": "https://penny.vincenttunru.com"
+      }
+    },
+    {
+      "@id": "_:b97__g_L57C2249",
+      "acl:mode": [
+        {
+          "@id": "acl:Append"
+        },
+        {
+          "@id": "acl:Control"
+        },
+        {
+          "@id": "acl:Read"
+        },
+        {
+          "@id": "acl:Write"
+        }
+      ],
+      "acl:origin": {
+        "@id": "https://scenaristeur.github.io"
+      }
+    },
+    {
+      "@id": "_:b97__g_L61C2403",
+      "acl:mode": [
+        {
+          "@id": "acl:Append"
+        },
+        {
+          "@id": "acl:Read"
+        },
+        {
+          "@id": "acl:Write"
+        }
+      ],
+      "acl:origin": {
+        "@id": "https://divoplade.frama.io"
+      }
+    },
+    {
+      "@id": "_:b97__g_L65C2541",
+      "acl:mode": [
+        {
+          "@id": "acl:Append"
+        },
+        {
+          "@id": "acl:Read"
+        },
+        {
+          "@id": "acl:Write"
+        }
+      ],
+      "acl:origin": {
+        "@id": "https://dvo1.github.io"
+      }
+    },
+    {
+      "@id": "_:b97__g_L69C2675",
+      "acl:mode": [
+        {
+          "@id": "acl:Append"
+        },
+        {
+          "@id": "acl:Read"
+        },
+        {
+          "@id": "acl:Write"
+        }
+      ],
+      "acl:origin": {
+        "@id": "https://pod-chat.com"
+      }
+    },
+    {
+      "@id": "_:b97__g_L73C2807",
+      "acl:mode": [
+        {
+          "@id": "acl:Append"
+        },
+        {
+          "@id": "acl:Read"
+        },
+        {
+          "@id": "acl:Write"
+        }
+      ],
+      "acl:origin": {
+        "@id": "https://solid-demo.generativeobjects.com"
+      }
+    },
+    {
+      "@id": "https://spoggy-test9.solidcommunity.net/profile/card",
+      "@type": "foaf:PersonalProfileDocument",
+      "foaf:maker": {
+        "@id": "https://spoggy-test9.solidcommunity.net/profile/card#me"
+      },
+      "foaf:primaryTopic": {
+        "@id": "https://spoggy-test9.solidcommunity.net/profile/card#me"
+      }
+    },
+    {
+      "@id": "https://spoggy-test9.solidcommunity.net/profile/card#me",
+      "@type": [
+        "schem:Person",
+        "foaf:Person"
+      ],
+      "vcard:fn": "SpoggyTest9",
+      "vcard:hasPhoto": {
+        "@id": "https://spoggy-test9.solidcommunity.net/profile/Gilloux.jpg"
+      },
+      "vcard:organization-name": "Smag0",
+      "vcard:role": "test for Decentralized Apps",
+      "acl:trustedApp": [
+        {
+          "@id": "_:b97__g_L29C1212"
+        },
+        {
+          "@id": "_:b97__g_L33C1357"
+        },
+        {
+          "@id": "_:b97__g_L37C1502"
+        },
+        {
+          "@id": "_:b97__g_L41C1647"
+        },
+        {
+          "@id": "_:b97__g_L45C1795"
+        },
+        {
+          "@id": "_:b97__g_L49C1952"
+        },
+        {
+          "@id": "_:b97__g_L53C2095"
+        },
+        {
+          "@id": "_:b97__g_L57C2249"
+        },
+        {
+          "@id": "_:b97__g_L61C2403"
+        },
+        {
+          "@id": "_:b97__g_L65C2541"
+        },
+        {
+          "@id": "_:b97__g_L69C2675"
+        },
+        {
+          "@id": "_:b97__g_L73C2807"
+        }
+      ],
+      "ldp:inbox": {
+        "@id": "https://spoggy-test9.solidcommunity.net/inbox/"
+      },
+      "sp:preferencesFile": {
+        "@id": "https://spoggy-test9.solidcommunity.net/settings/prefs.ttl"
+      },
+      "sp:storage": {
+        "@id": "https://spoggy-test9.solidcommunity.net/"
+      },
+      "solid:account": {
+        "@id": "https://spoggy-test9.solidcommunity.net/"
+      },
+      "solid:privateTypeIndex": {
+        "@id": "https://spoggy-test9.solidcommunity.net/settings/privateTypeIndex.ttl"
+      },
+      "solid:publicTypeIndex": {
+        "@id": "https://spoggy-test9.solidcommunity.net/settings/publicTypeIndex.ttl"
+      },
+      "foaf:knows": [
+        {
+          "@id": "https://spoggy-test.solidcommunity.net/profile/card#me"
+        },
+        {
+          "@id": "c0:me"
+        },
+        {
+          "@id": "c1:me"
+        },
+        {
+          "@id": "https://spoggy-test4.solidcommunity.net/profile/card#me"
+        },
+        {
+          "@id": "https://spoggy-test5.solidcommunity.net/profile/card#me"
+        },
+        {
+          "@id": "https://spoggy-test6.solidcommunity.net/profile/card#me"
+        },
+        {
+          "@id": "https://spoggy-test7.solidcommunity.net/profile/card#me"
+        },
+        {
+          "@id": "https://spoggy-test8.solidcommunity.net/profile/card#me"
+        },
+        {
+          "@id": "https://spoggy-test9.solidcommunity.net/profile/card#me"
+        }
+      ],
+      "foaf:name": "spoggy-test9"
+    }
+  ]
+}

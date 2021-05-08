@@ -1,0 +1,23 @@
+{
+  "@context": {
+    "schem": "http://schema.org/",
+    "solid": "http://www.w3.org/ns/solid/terms#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "acl": "http://www.w3.org/ns/auth/acl#",
+    "ldp": "http://www.w3.org/ns/ldp#",
+    "sp": "http://www.w3.org/ns/pim/space#",
+    "c": {"@id": "https://spoggy-test.solidcommunity.net/profile/card#"},
+    "c0": "https://spoggy-test2.solidcommunity.net/profile/card#",
+    "c1": "https://spoggy-test3.solidcommunity.net/profile/card#",
+    "c2": {"@id": "https://spoggy-test4.solidcommunity.net/profile/card#"},
+    "c3": {"@id": "https://spoggy-test5.solidcommunity.net/profile/card#"},
+    "c4": {"@id": "https://spoggy-test6.solidcommunity.net/profile/card#"},
+    "c5": {"@id": "https://spoggy-test7.solidcommunity.net/profile/card#"},
+    "c6": {"@id": "https://spoggy-test8.solidcommunity.net/profile/card#"},
+    "pro": {"@id": "https://spoggy-test9.solidcommunity.net/profile/"},
+    "inbox": {"@id": "https://spoggy-test9.solidcommunity.net/inbox/"},
+    "settings": {"@id": "https://spoggy-test9.solidcommunity.net/inbox/"},
+    "spo": {"@id": "https://spoggy-test9.solidcommunity.net/"}
+  }
+}

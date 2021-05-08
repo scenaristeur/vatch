@@ -1,0 +1,399 @@
+[
+  {
+    "@id": "_:b97__g_L29C1212",
+    "http://www.w3.org/ns/auth/acl#mode": [
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Append"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Control"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Read"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Write"
+      }
+    ],
+    "http://www.w3.org/ns/auth/acl#origin": [
+      {
+        "@id": "http://127.0.0.1:8080"
+      }
+    ]
+  },
+  {
+    "@id": "_:b97__g_L33C1357",
+    "http://www.w3.org/ns/auth/acl#mode": [
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Append"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Control"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Read"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Write"
+      }
+    ],
+    "http://www.w3.org/ns/auth/acl#origin": [
+      {
+        "@id": "http://localhost:8080"
+      }
+    ]
+  },
+  {
+    "@id": "_:b97__g_L37C1502",
+    "http://www.w3.org/ns/auth/acl#mode": [
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Append"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Control"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Read"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Write"
+      }
+    ],
+    "http://www.w3.org/ns/auth/acl#origin": [
+      {
+        "@id": "http://localhost:9000"
+      }
+    ]
+  },
+  {
+    "@id": "_:b97__g_L41C1647",
+    "http://www.w3.org/ns/auth/acl#mode": [
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Append"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Control"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Read"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Write"
+      }
+    ],
+    "http://www.w3.org/ns/auth/acl#origin": [
+      {
+        "@id": "https://drive.owntech.io"
+      }
+    ]
+  },
+  {
+    "@id": "_:b97__g_L45C1795",
+    "http://www.w3.org/ns/auth/acl#mode": [
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Append"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Control"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Read"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Write"
+      }
+    ],
+    "http://www.w3.org/ns/auth/acl#origin": [
+      {
+        "@id": "https://harrystminrupt.inrupt.net"
+      }
+    ]
+  },
+  {
+    "@id": "_:b97__g_L49C1952",
+    "http://www.w3.org/ns/auth/acl#mode": [
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Append"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Control"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Read"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Write"
+      }
+    ],
+    "http://www.w3.org/ns/auth/acl#origin": [
+      {
+        "@id": "https://itme.online"
+      }
+    ]
+  },
+  {
+    "@id": "_:b97__g_L53C2095",
+    "http://www.w3.org/ns/auth/acl#mode": [
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Append"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Control"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Read"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Write"
+      }
+    ],
+    "http://www.w3.org/ns/auth/acl#origin": [
+      {
+        "@id": "https://penny.vincenttunru.com"
+      }
+    ]
+  },
+  {
+    "@id": "_:b97__g_L57C2249",
+    "http://www.w3.org/ns/auth/acl#mode": [
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Append"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Control"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Read"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Write"
+      }
+    ],
+    "http://www.w3.org/ns/auth/acl#origin": [
+      {
+        "@id": "https://scenaristeur.github.io"
+      }
+    ]
+  },
+  {
+    "@id": "_:b97__g_L61C2403",
+    "http://www.w3.org/ns/auth/acl#mode": [
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Append"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Read"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Write"
+      }
+    ],
+    "http://www.w3.org/ns/auth/acl#origin": [
+      {
+        "@id": "https://divoplade.frama.io"
+      }
+    ]
+  },
+  {
+    "@id": "_:b97__g_L65C2541",
+    "http://www.w3.org/ns/auth/acl#mode": [
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Append"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Read"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Write"
+      }
+    ],
+    "http://www.w3.org/ns/auth/acl#origin": [
+      {
+        "@id": "https://dvo1.github.io"
+      }
+    ]
+  },
+  {
+    "@id": "_:b97__g_L69C2675",
+    "http://www.w3.org/ns/auth/acl#mode": [
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Append"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Read"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Write"
+      }
+    ],
+    "http://www.w3.org/ns/auth/acl#origin": [
+      {
+        "@id": "https://pod-chat.com"
+      }
+    ]
+  },
+  {
+    "@id": "_:b97__g_L73C2807",
+    "http://www.w3.org/ns/auth/acl#mode": [
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Append"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Read"
+      },
+      {
+        "@id": "http://www.w3.org/ns/auth/acl#Write"
+      }
+    ],
+    "http://www.w3.org/ns/auth/acl#origin": [
+      {
+        "@id": "https://solid-demo.generativeobjects.com"
+      }
+    ]
+  },
+  {
+    "@id": "https://spoggy-test9.solidcommunity.net/profile/card",
+    "@type": [
+      "http://xmlns.com/foaf/0.1/PersonalProfileDocument"
+    ],
+    "http://xmlns.com/foaf/0.1/maker": [
+      {
+        "@id": "https://spoggy-test9.solidcommunity.net/profile/card#me"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/primaryTopic": [
+      {
+        "@id": "https://spoggy-test9.solidcommunity.net/profile/card#me"
+      }
+    ]
+  },
+  {
+    "@id": "https://spoggy-test9.solidcommunity.net/profile/card#me",
+    "@type": [
+      "http://schema.org/Person",
+      "http://xmlns.com/foaf/0.1/Person"
+    ],
+    "http://www.w3.org/2006/vcard/ns#fn": [
+      {
+        "@value": "SpoggyTest9"
+      }
+    ],
+    "http://www.w3.org/2006/vcard/ns#hasPhoto": [
+      {
+        "@id": "https://spoggy-test9.solidcommunity.net/profile/Gilloux.jpg"
+      }
+    ],
+    "http://www.w3.org/2006/vcard/ns#organization-name": [
+      {
+        "@value": "Smag0"
+      }
+    ],
+    "http://www.w3.org/2006/vcard/ns#role": [
+      {
+        "@value": "test for Decentralized Apps"
+      }
+    ],
+    "http://www.w3.org/ns/auth/acl#trustedApp": [
+      {
+        "@id": "_:b97__g_L29C1212"
+      },
+      {
+        "@id": "_:b97__g_L33C1357"
+      },
+      {
+        "@id": "_:b97__g_L37C1502"
+      },
+      {
+        "@id": "_:b97__g_L41C1647"
+      },
+      {
+        "@id": "_:b97__g_L45C1795"
+      },
+      {
+        "@id": "_:b97__g_L49C1952"
+      },
+      {
+        "@id": "_:b97__g_L53C2095"
+      },
+      {
+        "@id": "_:b97__g_L57C2249"
+      },
+      {
+        "@id": "_:b97__g_L61C2403"
+      },
+      {
+        "@id": "_:b97__g_L65C2541"
+      },
+      {
+        "@id": "_:b97__g_L69C2675"
+      },
+      {
+        "@id": "_:b97__g_L73C2807"
+      }
+    ],
+    "http://www.w3.org/ns/ldp#inbox": [
+      {
+        "@id": "https://spoggy-test9.solidcommunity.net/inbox/"
+      }
+    ],
+    "http://www.w3.org/ns/pim/space#preferencesFile": [
+      {
+        "@id": "https://spoggy-test9.solidcommunity.net/settings/prefs.ttl"
+      }
+    ],
+    "http://www.w3.org/ns/pim/space#storage": [
+      {
+        "@id": "https://spoggy-test9.solidcommunity.net/"
+      }
+    ],
+    "http://www.w3.org/ns/solid/terms#account": [
+      {
+        "@id": "https://spoggy-test9.solidcommunity.net/"
+      }
+    ],
+    "http://www.w3.org/ns/solid/terms#privateTypeIndex": [
+      {
+        "@id": "https://spoggy-test9.solidcommunity.net/settings/privateTypeIndex.ttl"
+      }
+    ],
+    "http://www.w3.org/ns/solid/terms#publicTypeIndex": [
+      {
+        "@id": "https://spoggy-test9.solidcommunity.net/settings/publicTypeIndex.ttl"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/knows": [
+      {
+        "@id": "https://spoggy-test.solidcommunity.net/profile/card#me"
+      },
+      {
+        "@id": "https://spoggy-test2.solidcommunity.net/profile/card#me"
+      },
+      {
+        "@id": "https://spoggy-test3.solidcommunity.net/profile/card#me"
+      },
+      {
+        "@id": "https://spoggy-test4.solidcommunity.net/profile/card#me"
+      },
+      {
+        "@id": "https://spoggy-test5.solidcommunity.net/profile/card#me"
+      },
+      {
+        "@id": "https://spoggy-test6.solidcommunity.net/profile/card#me"
+      },
+      {
+        "@id": "https://spoggy-test7.solidcommunity.net/profile/card#me"
+      },
+      {
+        "@id": "https://spoggy-test8.solidcommunity.net/profile/card#me"
+      },
+      {
+        "@id": "https://spoggy-test9.solidcommunity.net/profile/card#me"
+      }
+    ],
+    "http://xmlns.com/foaf/0.1/name": [
+      {
+        "@value": "spoggy-test9"
+      }
+    ]
+  }
+]

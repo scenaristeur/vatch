@@ -1,0 +1,85 @@
+@prefix : <#>.
+@prefix solid: <http://www.w3.org/ns/solid/terms#>.
+@prefix pro: <./>.
+@prefix n0: <http://xmlns.com/foaf/0.1/>.
+@prefix schem: <http://schema.org/>.
+@prefix n: <http://www.w3.org/2006/vcard/ns#>.
+@prefix n1: <http://www.w3.org/ns/auth/acl#>.
+@prefix ldp: <http://www.w3.org/ns/ldp#>.
+@prefix inbox: </inbox/>.
+@prefix sp: <http://www.w3.org/ns/pim/space#>.
+@prefix spo: </>.
+@prefix c: <https://spoggy-test.solidcommunity.net/profile/card#>.
+@prefix c0: <https://spoggy-test2.solidcommunity.net/profile/card#>.
+@prefix c1: <https://spoggy-test3.solidcommunity.net/profile/card#>.
+@prefix c2: <https://spoggy-test4.solidcommunity.net/profile/card#>.
+@prefix c3: <https://spoggy-test5.solidcommunity.net/profile/card#>.
+@prefix c4: <https://spoggy-test6.solidcommunity.net/profile/card#>.
+@prefix c5: <https://spoggy-test7.solidcommunity.net/profile/card#>.
+@prefix c6: <https://spoggy-test8.solidcommunity.net/profile/card#>.
+
+pro:card a n0:PersonalProfileDocument; n0:maker :me; n0:primaryTopic :me.
+
+:me
+    a schem:Person, n0:Person;
+    n:fn "SpoggyTest9";
+    n:hasPhoto <Gilloux.jpg>;
+    n:organization-name "Smag0";
+    n:role "test for Decentralized Apps";
+    n1:trustedApp
+            [
+                n1:mode n1:Append, n1:Control, n1:Read, n1:Write;
+                n1:origin <http://127.0.0.1:8080>
+            ],
+            [
+                n1:mode n1:Append, n1:Control, n1:Read, n1:Write;
+                n1:origin <http://localhost:8080>
+            ],
+            [
+                n1:mode n1:Append, n1:Control, n1:Read, n1:Write;
+                n1:origin <http://localhost:9000>
+            ],
+            [
+                n1:mode n1:Append, n1:Control, n1:Read, n1:Write;
+                n1:origin <https://drive.owntech.io>
+            ],
+            [
+                n1:mode n1:Append, n1:Control, n1:Read, n1:Write;
+                n1:origin <https://harrystminrupt.inrupt.net>
+            ],
+            [
+                n1:mode n1:Append, n1:Control, n1:Read, n1:Write;
+                n1:origin <https://itme.online>
+            ],
+            [
+                n1:mode n1:Append, n1:Control, n1:Read, n1:Write;
+                n1:origin <https://penny.vincenttunru.com>
+            ],
+            [
+                n1:mode n1:Append, n1:Control, n1:Read, n1:Write;
+                n1:origin <https://scenaristeur.github.io>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://divoplade.frama.io>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://dvo1.github.io>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://pod-chat.com>
+            ],
+            [
+                n1:mode n1:Append, n1:Read, n1:Write;
+                n1:origin <https://solid-demo.generativeobjects.com>
+            ];
+    ldp:inbox inbox:;
+    sp:preferencesFile </settings/prefs.ttl>;
+    sp:storage spo:;
+    solid:account spo:;
+    solid:privateTypeIndex </settings/privateTypeIndex.ttl>;
+    solid:publicTypeIndex </settings/publicTypeIndex.ttl>;
+    n0:knows c:me, c0:me, c1:me, c2:me, c3:me, c4:me, c5:me, c6:me, :me;
+    n0:name "spoggy-test9".
