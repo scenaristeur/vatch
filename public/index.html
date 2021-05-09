@@ -19,6 +19,7 @@
       <br>
       <input id="path" autocomplete="off" />
       <button onclick="save()">Save</button>
+      <button onclick="clusterByGroup()">Cluster By group</button>
 
     </div>
     <div class="chat">
@@ -34,6 +35,7 @@
     <form id="form" action="">
       <input id="input" autocomplete="off" /><button>Send</button>
     </form>
+
   </div>
 
   <script src="/socket.io/socket.io.js"></script>
@@ -57,226 +59,287 @@
     nodes: nodes,
     edges: edges
   };
-  let options = {edges : {arrows: 'to'}};
+  let options = {
+    interaction: {
+      navigationButtons: true,
+      //  keyboard: true,
+    },
+    edges : {arrows: 'to'}};
 
-  // initialize your network!
-  let network = new vis.Network(container, data, options);
+    // initialize your network!
+    let network = new vis.Network(container, data, options);
 
-  // Socket
-  let socket = io();
+    // Socket
+    let socket = io();
 
-  let messages = document.getElementById('messages');
-  let form = document.getElementById('form');
-  let input = document.getElementById('input');
+    let messages = document.getElementById('messages');
+    let form = document.getElementById('form');
+    let input = document.getElementById('input');
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    if (input.value) {
-      socket.emit('chat message', input.value);
-      input.value = '';
-    }
-  });
-
-  function save(){
-    let content = document.getElementById("content").value
-    let path = document.getElementById("path").value
-    console.log(path, content)
-    socket.emit('write file', {path: path, content: content});
-  }
-
-  socket.on('init', function(init) {
-    pathsep = init.pathsep
-    let item = document.createElement('li');
-    item.textContent = init.welcome;
-    messages.appendChild(item);
-    //  window.scrollTo(0, document.body.scrollHeight);
-  });
-
-  socket.on('chat message', function(msg) {
-    let item = document.createElement('li');
-    item.textContent = msg;
-    messages.appendChild(item);
-    window.scrollTo(0, document.body.scrollHeight);
-  });
-
-  socket.on('watcher event', function(msg) {
-    process(msg)
-    let item = document.createElement('li');
-    item.textContent = JSON.stringify(msg);
-    messages.appendChild(item);
-    //  window.scrollTo(0, document.body.scrollHeight);
-  });
-
-  socket.on('cat file', function(msg) {
-    let item = document.createElement('li');
-    item.textContent = msg;
-    messages.appendChild(item);
-    //  window.scrollTo(0, document.body.scrollHeight);
-
-    processFile(msg)
-  });
-
-  socket.on('connect', () => {
-    console.log('user connected');
-    document.body.style.backgroundColor = "rgba(11,156,49,0.1)"
-  });
-  socket.on('disconnect', () => {
-    console.log('user disconnected');
-    document.body.style.backgroundColor = "rgba(156,11,49,0.1)"
-  });
-
-  function processFile(msg){
-    if(msg.error){
-      alert("Error: ",msg.error)
-      return
-    }
-    if (msg.type == undefined){
-      msg.ext = msg.path.split('.').pop()
-    }
-    console.log(msg)
-    try{
-      document.getElementById("path").value = msg.path
-      document.getElementById('image').style.display = "none"
-      document.getElementById('content').style.display = "block"
-      document.getElementById("content").value = msg.content
-      if (msg.type == "application/json" || msg.ext =="json"){
-        msg.content = JSON.parse(msg.content)
-      }else if(msg.type != undefined && msg.type.mime != undefined && msg.type.mime.split('/')[0] == 'image'){
-        console.log(msg.content)
-        let src= 'data:'+msg.type.mime+';base64,' + msg.content;
-        console.log("image",src)
-        document.getElementById('image').src = src
-        document.getElementById('image').style.display = "block"
-        document.getElementById('content').style.display = "none"
-
-        // let ctx = document.getElementById('canvas').getContext('2d');
-        // let img = new Image();
-        // //let src= 'data:'+msg.type.mime+',' + msg.content;
-        // console.log("src",src)
-        // img.src = src
-        // ctx.drawImage(img, 0, 0);
-        // console.log(ctx)
-
-      }else{
-        console.log(msg)
-      }
-
-      msg.content.nodes != undefined ? nodes.update(msg.content.nodes) : ""
-      msg.content.edges != undefined ? edges.update(msg.content.edges) : ""
-
-    }catch(e){
-      console.log(e)
-    }
-
-  }
-
-  function process(msg){
-    console.log(msg)
-    msg.forEach((item, i) => {
-      switch (item.event) {
-        case "add":
-        add(item)
-        break;
-        case "addDir":
-        addDir(item)
-        //  linkContainer(item)
-        break;
-        case "unlink":
-        unlink(item)
-        unlinkContainer(item)
-        break;
-        case "unlinkDir":
-        unlinkDir(item)
-        unlinkContainer(item)
-        break;
-        case "change":
-        change(item)
-        break;
-        default:
-
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (input.value) {
+        socket.emit('chat message', input.value);
+        input.value = '';
       }
     });
-    //  console.log(network)
-  }
 
-  //https://visjs.github.io/vis-data/data/dataset.html
-  // https://visjs.github.io/vis-network/docs/network/manipulation.html
-  // https://visjs.github.io/vis-network/docs/network/#methodManipulation
-
-  function add(item){
-    let color = '#55D5E0'
-    let label = item.path.split(pathsep).pop()
-    nodes.add([{
-      id: item.path, label:label, color:color, type: 'file'
-    }])
-    linkContainer(item)
-    if (label.startsWith('#')){
-      socket.emit('read file', item.path);
+    function save(){
+      let content = document.getElementById("content").value
+      let path = document.getElementById("path").value
+      console.log(path, content)
+      socket.emit('write file', {path: path, content: content});
     }
 
-  }
-  function addDir(item){
-    let p = item.path.split(pathsep)
-    let color = p.length == 1 ? '#F26619' : '#F6B12D'
-    nodes.add([{
-      id: item.path, label:p.pop(),shape: 'box', color: color, type: 'folder'
-    }])
-    linkContainer(item)
-  }
-  function unlink(item){
-    nodes.remove(item.path);
-  }
-  function unlinkDir(item){
-    nodes.remove(item.path);
-  }
-  function linkContainer(item){
-    let splitted = item.path.split(pathsep)
-    if (splitted.length > 1){
-      let to = item.path
-      splitted.pop()
-      let from = splitted.join(pathsep)
-      let edge = {from: from, to: to, label: "contains"}
-      edges.add([edge])
+    socket.on('init', function(init) {
+      pathsep = init.pathsep
+      let item = document.createElement('li');
+      item.textContent = init.welcome;
+      messages.appendChild(item);
+      //  window.scrollTo(0, document.body.scrollHeight);
+    });
+
+    socket.on('chat message', function(msg) {
+      let item = document.createElement('li');
+      item.textContent = msg;
+      messages.appendChild(item);
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+
+    socket.on('watcher event', function(msg) {
+      process(msg)
+      let item = document.createElement('li');
+      item.textContent = JSON.stringify(msg);
+      messages.appendChild(item);
+      //  window.scrollTo(0, document.body.scrollHeight);
+    });
+
+    socket.on('cat file', function(msg) {
+      let item = document.createElement('li');
+      item.textContent = msg;
+      messages.appendChild(item);
+      //  window.scrollTo(0, document.body.scrollHeight);
+
+      processFile(msg)
+    });
+
+    socket.on('connect', () => {
+      console.log('user connected');
+      document.body.style.backgroundColor = "rgba(11,156,49,0.1)"
+    });
+    socket.on('disconnect', () => {
+      console.log('user disconnected');
+      document.body.style.backgroundColor = "rgba(156,11,49,0.1)"
+    });
+
+    function processFile(msg){
+      if(msg.error){
+        alert("Error: ",msg.error)
+        return
+      }
+      if (msg.type == undefined){
+        msg.ext = msg.path.split('.').pop()
+      }
+      //console.log(msg)
+      try{
+        document.getElementById("path").value = msg.path
+        document.getElementById('image').style.display = "none"
+        document.getElementById('content').style.display = "block"
+        document.getElementById("content").value = msg.content
+        if (msg.type == "application/json" || msg.ext =="json"){
+          msg.content = JSON.parse(msg.content)
+        }else if(msg.type != undefined && msg.type.mime != undefined && msg.type.mime.split('/')[0] == 'image'){
+          //console.log(msg.content)
+          let src= 'data:'+msg.type.mime+';base64,' + msg.content;
+          //console.log("image",src)
+          document.getElementById('image').src = src
+          document.getElementById('image').style.display = "block"
+          document.getElementById('content').style.display = "none"
+
+          // let ctx = document.getElementById('canvas').getContext('2d');
+          // let img = new Image();
+          // //let src= 'data:'+msg.type.mime+',' + msg.content;
+          // console.log("src",src)
+          // img.src = src
+          // ctx.drawImage(img, 0, 0);
+          // console.log(ctx)
+
+        }else{
+          console.log(msg)
+        }
+
+        msg.content.nodes != undefined ? nodes.update(msg.content.nodes) : ""
+        msg.content.edges != undefined ? edges.update(msg.content.edges) : ""
+
+        edges.forEach((e) => {
+          console.log(e)
+          if (e.label == "a"){
+            nodes.get(e.from).group = e.to
+          }
+        });
+
+
+      }catch(e){
+        console.log(e)
+      }
+
     }
-  }
-  function unlinkContainer(item){
-    let splitted = item.path.split(pathsep)
-    if (splitted.length > 1){
-      let to = item.path
-      splitted.pop()
-      let from = splitted.join(pathsep)
-      let edges_to_remove =  edges.get({
-        filter: function (e) {
-          return e.from == from && e.to == to && e.label == "contains";
+
+    function process(msg){
+      console.log(msg)
+      msg.forEach((item, i) => {
+        switch (item.event) {
+          case "add":
+          add(item)
+          break;
+          case "addDir":
+          addDir(item)
+          //  linkContainer(item)
+          break;
+          case "unlink":
+          unlink(item)
+          unlinkContainer(item)
+          break;
+          case "unlinkDir":
+          unlinkDir(item)
+          unlinkContainer(item)
+          break;
+          case "change":
+          change(item)
+          break;
+          default:
+
         }
       });
-      edges.remove(edges_to_remove)
+      //  console.log(network)
     }
-  }
 
-  function change(item){
-    let n = nodes.get(item.path)
-    n.shape = "star"
-    nodes.update(n)
-  }
+    //https://visjs.github.io/vis-data/data/dataset.html
+    // https://visjs.github.io/vis-network/docs/network/manipulation.html
+    // https://visjs.github.io/vis-network/docs/network/#methodManipulation
 
-  // network events
-  network.on('selectNode', evt => {
-    let n_id = evt.nodes[0]
-    input.value = n_id
-    let n = nodes.get(n_id);
-    if (n.type == 'file'){
-      socket.emit('read file', n.id);
-      n.shape = "ellipse"
-      nodes.update(n)
-    }else if (n.type == "folder"){
-      n.shape = "box"
+    function add(item){
+      let color = '#55D5E0'
+      let label = item.path.split(pathsep).pop()
+      nodes.add([{
+        id: item.path, label:label, color:color, type: 'file', group: "file"
+      }])
+      linkContainer(item)
+      if (label.startsWith('#')){
+        socket.emit('read file', item.path);
+      }
+
+    }
+    function addDir(item){
+      let p = item.path.split(pathsep)
+      let color = p.length == 1 ? '#F26619' : '#F6B12D'
+      nodes.add([{
+        id: item.path, label:p.pop(),shape: 'box', color: color, type: 'folder', group: "folder"
+      }])
+      linkContainer(item)
+    }
+    function unlink(item){
+      nodes.remove(item.path);
+    }
+    function unlinkDir(item){
+      nodes.remove(item.path);
+    }
+    function linkContainer(item){
+      let splitted = item.path.split(pathsep)
+      if (splitted.length > 1){
+        let to = item.path
+        splitted.pop()
+        let from = splitted.join(pathsep)
+        let edge = {from: from, to: to, label: "contains"}
+        edges.add([edge])
+      }
+    }
+    function unlinkContainer(item){
+      let splitted = item.path.split(pathsep)
+      if (splitted.length > 1){
+        let to = item.path
+        splitted.pop()
+        let from = splitted.join(pathsep)
+        let edges_to_remove =  edges.get({
+          filter: function (e) {
+            return e.from == from && e.to == to && e.label == "contains";
+          }
+        });
+        edges.remove(edges_to_remove)
+      }
+    }
+
+    function change(item){
+      let n = nodes.get(item.path)
+      n.shape = "star"
       nodes.update(n)
     }
-  })
+
+    // network events
+    network.on('selectNode', evt => {
+      if (evt.nodes.length == 1) {
+        if (network.isCluster(evt.nodes[0]) == true) {
+          network.openCluster(evt.nodes[0]);
+        }else{
+          let n_id = evt.nodes[0]
+          input.value = n_id
+          let n = nodes.get(n_id);
+          if (n.type == 'file'){
+            socket.emit('read file', n.id);
+            n.shape = "ellipse"
+            nodes.update(n)
+          }else if (n.type == "folder"){
+            n.shape = "box"
+            nodes.update(n)
+          }
+        }
+      }
+    })
+
+    /**
+    * Extract given field from items array and return unique values in an array
+    */
+    function fieldFromItems(items, field) {
+      var tmpHash = {};
+      for (var n in items) {
+        tmpHash[items[n][field]] = true;
+      }
+
+      return Object.keys(tmpHash);
+    }
 
 
+    function collectGroups() {
+      var items = data.nodes.get({
+        fields: ['group']
+      });
+      return fieldFromItems(items, 'group');
+    }
 
-</script>
-</body>
-</html>
+    function clusterByGroup(){
+      // Determine all distinct group id's
+      var groups = collectGroups();
+
+      // Cluster per group
+      for (var n in groups) {
+        var group = groups[n];
+
+        network.cluster({
+          joinCondition: function(item) {
+            return item.group == group;
+          },
+          clusterNodeProperties: {
+            label: 'Group ' + group,
+            borderWidth: 3,
+            shape: "database",
+            color: 'orange'
+          }
+        });
+      }
+
+    }
+
+
+    </script>
+  </body>
+  </html>

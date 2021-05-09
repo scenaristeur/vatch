@@ -13,6 +13,9 @@ node .
 
 - manipulation with vis/vuejs https://github.com/Thomaash/me/blob/release/src/components/Vis.vue
 
+# viewer odt/pdf
+- https://viewerjs.org/instructions/
+
 # image through socket.io
 - https://codebaker.in/socket-send-image-chat-socket-using-nodejs/
 

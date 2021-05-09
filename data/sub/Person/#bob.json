@@ -1,0 +1,51 @@
+{
+  "nodes": [
+    {
+      "id": "#bob",
+      "label": "bob",
+      "color": {
+        "background": "#E5FFD2",
+        "border": "#2B7CE9"
+      },
+      "shape": "star",
+      "built": true
+    },
+    {
+      "id": "#dev",
+      "label": "dev",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#cool",
+      "label": "cool",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    }
+  ],
+  "edges": [
+    {
+      "from": "#bob",
+      "to": "#Person",
+      "label": "a"
+    },
+    {
+      "from": "#bob",
+      "to": "#dev",
+      "label": "a"
+    },
+    {
+      "from": "#bob",
+      "to": "#cool",
+      "label": "is"
+    }
+  ]
+}

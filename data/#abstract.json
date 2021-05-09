@@ -7,6 +7,7 @@
         "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "circle",
       "built": true
     },
@@ -17,6 +18,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -27,6 +29,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -37,6 +40,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -47,6 +51,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -57,6 +62,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -67,7 +73,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
-      "shape": "ellipse",
+      "group": "abstract","shape": "ellipse",
       "built": true
     },
     {
@@ -77,6 +83,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -87,6 +94,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -97,6 +105,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -107,6 +116,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -117,6 +127,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -127,6 +138,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -137,6 +149,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -147,6 +160,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -157,6 +171,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -167,6 +182,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -177,6 +193,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -187,6 +204,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -197,6 +215,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -207,6 +226,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -217,6 +237,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -227,6 +248,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -237,6 +259,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -247,6 +270,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     },
@@ -257,6 +281,7 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
+      "group": "abstract",
       "shape": "ellipse",
       "built": true
     }
