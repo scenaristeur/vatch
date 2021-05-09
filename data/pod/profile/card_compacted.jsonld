@@ -287,7 +287,7 @@
       ],
       "vcard:fn": "SpoggyTest9",
       "vcard:hasPhoto": {
-        "@id": "https://spoggy-test9.solidcommunity.net/profile/Gilloux.jpg"
+        "@id": "data/pod/profile/Gilloux.jpg"
       },
       "vcard:organization-name": "Smag0",
       "vcard:role": "test for Decentralized Apps",

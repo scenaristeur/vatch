@@ -4,9 +4,9 @@ let root = './data'
 const path = require('path');
 console.log(path.sep)
 if (path.sep === "\\") {
-console.log("Windows");
+  console.log("Windows");
 } else {
-console.log("Not Windows");
+  console.log("Not Windows");
 }
 // const Io = require('./modules/io')
 // let custom_io = new Io()
@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
 
   console.log('a user connected');
   socket.broadcast.emit('chat message', 'A new user'); //envoyer à tous les autres
-  socket.emit('init', {pathsep: path.sep, message: "hi"}); //envoyer au nouveau
+  socket.emit('init', {pathsep: path.sep, welcome: "hi"}); //envoyer au nouveau
   socket.emit('watcher event', watcher.paths)
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg); //envoyer à tout le monde
@@ -94,14 +94,31 @@ async function readFile(f, socket){
   let type = await FileType.fromFile('.'+path.sep+f)
   console.log(type);
 
-  //let content = fs.readFileSync(f, 'utf8')
-  fs.readFile(f, 'utf8', function (err,data) {
-    if (err) {
-      socket.emit('cat file', {path: f, error: err}); //envoyer à tout le monde
-    }
-    //  console.log(data)
-    socket.emit('cat file', {path: f, content: data, type:type}); //envoyer à tout le monde
-  });
+  if(type != undefined && type.mime != undefined && type.mime.split('/')[0] == 'image'){
+    console.log("image found")
+    fs.readFile(f, /*{encoding: 'base64'},*/ function (err,data) {
+      if (err) {
+        console.log('error')
+        socket.emit('cat file', {path: f, error: err}); //envoyer à tout le monde
+      }
+      console.log('image:')
+      // https://stackoverflow.com/questions/59478402/how-do-i-send-image-to-server-via-socket-io
+      socket.emit('cat file', {path: f, content: data.toString('base64'), type:type}); //envoyer à tout le monde
+      console.log('image file is initialized');
+    });
+  }
+  else{
+    //let content = fs.readFileSync(f, 'utf8')
+    fs.readFile(f, 'utf8', function (err,data) {
+      if (err) {
+        console.log('error', err)
+        socket.emit('cat file', {path: f, error: err}); //envoyer à tout le monde
+      }
+      console.log(data)
+      socket.emit('cat file', {path: f, content: data, type:type}); //envoyer à tout le monde
+    });
+  }
+
 
 }
 

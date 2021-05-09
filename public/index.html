@@ -34,11 +34,14 @@
 <body>
   <div id="mynetwork"></div>
   <div style="position:absolute;top:10px;right:10px">
-    <textarea id="content" rows="25" cols="50">
+
+    <textarea id="content" rows="25" cols="50" style="display:none" >
     </textarea>
     <br>
     <input id="path" autocomplete="off" />
     <button onclick="save()">Save</button>
+    <img id="image" width="200px" height="200px" style="display:none" />
+    <!-- <canvas id="canvas" width="200px" height="200px"></canvas> -->
   </div>
   <!-- <a href="./babylon" >Baby</a> -->
   <a href="https://scenaristeur.github.io/ipgs/" target="_blank">WAnt to CReate BIg MindMaps ? TRy me</a>
@@ -101,9 +104,9 @@
   socket.on('init', function(init) {
     pathsep = init.pathsep
     var item = document.createElement('li');
-    item.textContent = init.msg;
+    item.textContent = init.welcome;
     messages.appendChild(item);
-    window.scrollTo(0, document.body.scrollHeight);
+    //  window.scrollTo(0, document.body.scrollHeight);
   });
 
   socket.on('chat message', function(msg) {
@@ -118,16 +121,25 @@
     var item = document.createElement('li');
     item.textContent = JSON.stringify(msg);
     messages.appendChild(item);
-    window.scrollTo(0, document.body.scrollHeight);
+    //  window.scrollTo(0, document.body.scrollHeight);
   });
 
   socket.on('cat file', function(msg) {
     var item = document.createElement('li');
     item.textContent = msg;
     messages.appendChild(item);
-    window.scrollTo(0, document.body.scrollHeight);
+    //  window.scrollTo(0, document.body.scrollHeight);
 
     processFile(msg)
+  });
+
+  socket.on('connect', () => {
+    console.log('user connected');
+    document.body.style.backgroundColor = "rgba(11,156,49,0.1)"
+  });
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+    document.body.style.backgroundColor = "rgba(156,11,49,0.1)"
   });
 
   function processFile(msg){
@@ -138,14 +150,34 @@
     if (msg.type == undefined){
       msg.ext = msg.path.split('.').pop()
     }
-
+    console.log(msg)
     try{
       document.getElementById("path").value = msg.path
+      document.getElementById('image').style.display = "none"
+      document.getElementById('content').style.display = "block"
       document.getElementById("content").value = msg.content
       if (msg.type == "application/json" || msg.ext =="json"){
         msg.content = JSON.parse(msg.content)
+      }else if(msg.type != undefined && msg.type.mime != undefined && msg.type.mime.split('/')[0] == 'image'){
+        console.log(msg.content)
+        let src= 'data:'+msg.type.mime+';base64,' + msg.content;
+        console.log("image",src)
+        document.getElementById('image').src = src
+        document.getElementById('image').style.display = "block"
+        document.getElementById('content').style.display = "none"
+
+        // var ctx = document.getElementById('canvas').getContext('2d');
+        // var img = new Image();
+        // //let src= 'data:'+msg.type.mime+',' + msg.content;
+        // console.log("src",src)
+        // img.src = src
+        // ctx.drawImage(img, 0, 0);
+        // console.log(ctx)
+
+      }else{
+        console.log(msg)
       }
-      console.log(msg)
+
       msg.content.nodes != undefined ? nodes.update(msg.content.nodes) : ""
       msg.content.edges != undefined ? edges.update(msg.content.edges) : ""
 
