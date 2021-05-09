@@ -172,12 +172,10 @@
         msg.content.edges != undefined ? edges.update(msg.content.edges) : ""
 
         edges.forEach((e) => {
-          console.log(e)
           if (e.label == "a"){
             nodes.get(e.from).group = e.to
           }
         });
-
 
       }catch(e){
         console.log(e)
@@ -221,7 +219,7 @@
     function add(item){
       let color = '#55D5E0'
       let label = item.path.split(pathsep).pop()
-      nodes.add([{
+      nodes.update([{
         id: item.path, label:label, color:color, type: 'file', group: "file"
       }])
       linkContainer(item)
@@ -233,7 +231,7 @@
     function addDir(item){
       let p = item.path.split(pathsep)
       let color = p.length == 1 ? '#F26619' : '#F6B12D'
-      nodes.add([{
+      nodes.update([{
         id: item.path, label:p.pop(),shape: 'box', color: color, type: 'folder', group: "folder"
       }])
       linkContainer(item)
@@ -250,8 +248,16 @@
         let to = item.path
         splitted.pop()
         let from = splitted.join(pathsep)
-        let edge = {from: from, to: to, label: "contains"}
-        edges.add([edge])
+        let exist_edge =  edges.get({
+          filter: function (e) {
+            return e.from == from && e.to == to && e.label == "contains";
+          }
+        });
+        console.log(exist_edge)
+        if(exist_edge.length == 0){
+          let edge = {from: from, to: to, label: "contains"}
+          edges.add([edge])
+        }
       }
     }
     function unlinkContainer(item){

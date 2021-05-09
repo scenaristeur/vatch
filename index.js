@@ -43,7 +43,7 @@ io.on('connection', (socket) => {
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg); //envoyer à tout le monde
     if(msg.startsWith('data')){
-      console.log(msg)
+      //  console.log(msg)
       if (msg.endsWith(path.sep)){
         try {
           if (!fs.existsSync(msg)) {
@@ -69,7 +69,7 @@ io.on('connection', (socket) => {
   });
 
   socket.on('write file', (msg) => {
-    console.log(msg)
+    //  console.log(msg)
     io.emit('chat message', msg.path); //envoyer à tout le monde
     if(msg.path.startsWith('data')){
       fs.writeFile(msg.path, msg.content, (err) => {
@@ -83,7 +83,7 @@ io.on('connection', (socket) => {
 
 
   socket.on('read file', (f) => {
-    console.log(f)
+    //  console.log(f)
     readFile(f, socket)
   });
   socket.on('disconnect', () => {
@@ -102,7 +102,7 @@ async function readFile(f, socket){
         console.log('error')
         socket.emit('cat file', {path: f, error: err}); //envoyer à tout le monde
       }
-      console.log('image:')
+
       // https://stackoverflow.com/questions/59478402/how-do-i-send-image-to-server-via-socket-io
       socket.emit('cat file', {path: f, content: data.toString('base64'), type:type}); //envoyer à tout le monde
       console.log('image file is initialized');
@@ -115,7 +115,7 @@ async function readFile(f, socket){
         console.log('error', err)
         socket.emit('cat file', {path: f, error: err}); //envoyer à tout le monde
       }
-      console.log(data)
+      //  console.log(data)
       socket.emit('cat file', {path: f, content: data, type:type}); //envoyer à tout le monde
     });
   }
