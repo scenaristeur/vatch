@@ -25,6 +25,7 @@ let watcher = new Watcher(io, root)
 
 const FileType = require('file-type');
 
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
@@ -123,6 +124,7 @@ async function readFile(f, socket){
 }
 
 // server.listen(3000,  '192.168.1.85', () => {
-server.listen(3000, () => {
+//server.listen(3000, '0.0.0.0', () => {
+server.listen(3000, () => { // ok for local network on linux
   console.log('listening on *:3000');
 });

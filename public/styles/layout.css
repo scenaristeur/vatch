@@ -1,0 +1,16 @@
+/* https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox */
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
+.network {
+  flex: 1 1 auto;
+}
+
+.preview {
+  flex: 1 1 auto;
+}
+
+.chat {
+  flex: 1 1 auto;
+}

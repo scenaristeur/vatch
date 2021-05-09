@@ -2,72 +2,89 @@
 <html>
 <head>
   <title>Vatch is vatching your system</title>
-  <script type="text/javascript" src="./js/vis-network.min.js"></script>
-  <link rel="stylesheet" href="./styles/layout.css">
-  <link rel="stylesheet" href="./styles/network.css">
-  <link rel="stylesheet" href="./styles/chat.css">
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+  <style type="text/css">
+  #mynetwork {
+    width: 600px;
+    height: 400px;
+    border: 1px solid lightgray;
+  }
+  </style>
+  <style>
+  body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+  #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+  #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+  #input:focus { outline: none; }
+  #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+  #messages { list-style-type: none; margin: 0; padding: 0; }
+  #messages > li { padding: 0.5rem 1rem; }
+  #messages > li:nth-child(odd) { background: #efefef; }
+  .wrapper{
+    // width: 1000px;
+    width:600px;
+    overflow-y:scroll;
+    position:relative;
+    height: 300px;
+  }
+  </style>
 </head>
 <body>
+  <div id="mynetwork"></div>
+  <div style="position:absolute;top:10px;right:10px">
 
+    <textarea id="content" rows="25" cols="50" style="display:none" >
+    </textarea>
+    <br>
+    <input id="path" autocomplete="off" />
+    <button onclick="save()">Save</button>
+    <img id="image" width="200px" height="200px" style="display:none" />
+    <!-- <canvas id="canvas" width="200px" height="200px"></canvas> -->
+  </div>
+  <!-- <a href="./babylon" >Baby</a> -->
+  <a href="https://scenaristeur.github.io/ipgs/" target="_blank">WAnt to CReate BIg MindMaps ? TRy me</a>
 
-  <div class="box">
-    <div id="mynetwork" class="network"></div>
-    <div class="preview">
-      <textarea id="content" rows="25" cols="50" style="display:none" >
-      </textarea>
-      <img id="image" width="425px" height="400px" style="display:none" />
-      <br>
-      <input id="path" autocomplete="off" />
-      <button onclick="save()">Save</button>
-
-    </div>
-    <div class="chat">
-      <div class="wrapper">
-        <ul id="messages"></ul>
-      </div>
-    </div>
-    <div class="doc">
-      <!-- <a href="./babylon" >Baby</a> -->
-      <a href="https://scenaristeur.github.io/ipgs/" target="_blank">WAnt to CReate BIg MindMaps ? TRy me</a>
-    </div>
-
-    <form id="form" action="">
-      <input id="input" autocomplete="off" /><button>Send</button>
-    </form>
+  <div class="wrapper">
+    <ul id="messages"></ul>
   </div>
 
+  <form id="form" action="">
+    <input id="input" autocomplete="off" /><button>Send</button>
+  </form>
   <script src="/socket.io/socket.io.js"></script>
   <script>
 
   //init
-  let pathsep='/' //  ... / for linux, \\ for Windows
+  pathsep='/' //  ... / for linux, \\ for Windows
 
 
   // create an array with nodes
-  let nodes = new vis.DataSet([]);
+  var nodes = new vis.DataSet([]);
 
   // create an array with edges
-  let edges = new vis.DataSet([]);
+  var edges = new vis.DataSet([]);
 
   // create a network
-  let container = document.getElementById('mynetwork');
+  var container = document.getElementById('mynetwork');
 
   // provide the data in the vis format
-  let data = {
+  var data = {
     nodes: nodes,
     edges: edges
   };
-  let options = {edges : {arrows: 'to'}};
+  var options = {edges : {arrows: 'to'}};
 
   // initialize your network!
-  let network = new vis.Network(container, data, options);
+  var network = new vis.Network(container, data, options);
 
   // Socket
-  let socket = io();
+  var socket = io();
 
-  let messages = document.getElementById('messages');
-  let form = document.getElementById('form');
-  let input = document.getElementById('input');
+  var messages = document.getElementById('messages');
+  var form = document.getElementById('form');
+  var input = document.getElementById('input');
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -86,14 +103,14 @@
 
   socket.on('init', function(init) {
     pathsep = init.pathsep
-    let item = document.createElement('li');
+    var item = document.createElement('li');
     item.textContent = init.welcome;
     messages.appendChild(item);
     //  window.scrollTo(0, document.body.scrollHeight);
   });
 
   socket.on('chat message', function(msg) {
-    let item = document.createElement('li');
+    var item = document.createElement('li');
     item.textContent = msg;
     messages.appendChild(item);
     window.scrollTo(0, document.body.scrollHeight);
@@ -101,14 +118,14 @@
 
   socket.on('watcher event', function(msg) {
     process(msg)
-    let item = document.createElement('li');
+    var item = document.createElement('li');
     item.textContent = JSON.stringify(msg);
     messages.appendChild(item);
     //  window.scrollTo(0, document.body.scrollHeight);
   });
 
   socket.on('cat file', function(msg) {
-    let item = document.createElement('li');
+    var item = document.createElement('li');
     item.textContent = msg;
     messages.appendChild(item);
     //  window.scrollTo(0, document.body.scrollHeight);
@@ -149,8 +166,8 @@
         document.getElementById('image').style.display = "block"
         document.getElementById('content').style.display = "none"
 
-        // let ctx = document.getElementById('canvas').getContext('2d');
-        // let img = new Image();
+        // var ctx = document.getElementById('canvas').getContext('2d');
+        // var img = new Image();
         // //let src= 'data:'+msg.type.mime+',' + msg.content;
         // console.log("src",src)
         // img.src = src
@@ -277,6 +294,6 @@
 
 
 
-</script>
+  </script>
 </body>
 </html>
