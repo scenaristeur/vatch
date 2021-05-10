@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+  <title>Vatch is vatching your system</title>
+  <!-- vuejs -->
+  <script type="text/javascript" src="./js/vue.js"></script>
+  <!-- production version, optimized for size and speed -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+  <script type="text/javascript" src="./js/vuex.js"></script>
+
+  <!-- bootstrap -->
+  <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="./styles/bootstrap.min.css">
+  <!-- visjs -->
+  <script type="text/javascript" src="./js/vis-network.min.js"></script>
+  <link rel="stylesheet" href="./styles/network.css">
+
+  <!-- custom -->
+  <link rel="stylesheet" href="./styles/layout.css">
+
+  <link rel="stylesheet" href="./styles/chat.css">
+  <script src="https://unpkg.com/jsonld@5.0.0/dist/jsonld.esm.min.js"></script>
+  <script type="module" src="./main.js"></script>
+</head>
+<body>
+
+
+  <div id="app">
+    {{ message }}
+  </div>
+
+  https://data.virtual-assembly.org/organizations<br>
+  https://data.virtual-assembly.org/users<br>
+  https://data.virtual-assembly.org/projects<br>
+  https://data.virtual-assembly.org/skills <br> ...
+
+  <hr>
+  <hr>
+
+  <input id="inputUrl" placeholder="ldp container to load" value="https://data.virtual-assembly.org/users" size="75" />
+  <button id="loadData">LOAD</button>
+
+  <div id="result"></div>
+
+  <a href="https://github.com/scenaristeur/ouiz" target="_blank">Source</a>
+
+</body>
+<html>
