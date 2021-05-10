@@ -8,15 +8,11 @@ let root = './data'
 const path = require('path');
 console.log(path.sep)
 if (path.sep === "\\") {
-  console.log("Windows");
+  console.log("Windows System");
 } else {
-  console.log("Not Windows");
+  console.log("Not a Windows System");
 }
-// const Io = require('./modules/io')
-// let custom_io = new Io()
-//
-//
-// custom_io.hello()
+
 const fs = require('fs')
 const express = require('express');
 const app = express();
@@ -24,7 +20,6 @@ const http = require('http');
 const server = http.createServer(app);
 const io = require("socket.io")(server, {
   cors: {
-    // origin: "http://localhost:3001",
     origin: '*',
     methods: ["GET", "POST"]
   }
@@ -32,11 +27,11 @@ const io = require("socket.io")(server, {
 // const io = new Server(server);
 const Watcher = require('./modules/watcher')
 let watcher = new Watcher(io, root)
-
 const FileType = require('file-type');
 
-app.use(express.static('public'));
+let users = {}
 
+app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
@@ -45,10 +40,11 @@ app.get('/babylon', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-
-  console.log('a user connected');
-  socket.broadcast.emit('chat message', 'A new user'); //envoyer à tous les autres
-  socket.emit('init', {pathsep: path.sep, welcome: "hi"}); //envoyer au nouveau
+  users[socket.id] = {connexion: new Date()}
+  let users_nb = Object.keys(users).length
+  console.log(users_nb+" users",users)
+  socket.broadcast.emit('chat message', 'A new user '+users_nb); //envoyer à tous les autres
+  socket.emit('init', {pathsep: path.sep, welcome: "hi", users: users_nb}); //envoyer au nouveau
   socket.emit('watcher event', watcher.paths)
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg); //envoyer à tout le monde
@@ -73,13 +69,11 @@ io.on('connection', (socket) => {
         } catch (err) {
           console.error(err)
         }
-
       }
     }
   });
 
   socket.on('write file', (msg) => {
-    //  console.log(msg)
     io.emit('chat message', msg.path); //envoyer à tout le monde
     if(msg.path.startsWith('data')){
       fs.writeFile(msg.path, msg.content, (err) => {
@@ -88,53 +82,44 @@ io.on('connection', (socket) => {
       });
     }
   });
-
-
-
-
   socket.on('read file', (f) => {
-    //  console.log(f)
     readFile(f, socket)
   });
+
   socket.on('disconnect', () => {
+    delete users[socket.id]
     console.log('user disconnected');
   });
 });
 
 async function readFile(f, socket){
   let type = await FileType.fromFile('.'+path.sep+f)
-  console.log(type);
-
+  console.log("mime type",type);
+  //image loading
   if(type != undefined && type.mime != undefined && type.mime.split('/')[0] == 'image'){
-    console.log("image found")
     fs.readFile(f, /*{encoding: 'base64'},*/ function (err,data) {
       if (err) {
         console.log('error')
         socket.emit('cat file', {path: f, error: err}); //envoyer à tout le monde
       }
-
-      // https://stackoverflow.com/questions/59478402/how-do-i-send-image-to-server-via-socket-io
-      socket.emit('cat file', {path: f, content: data.toString('base64'), type:type}); //envoyer à tout le monde
+      socket.emit('cat file', {path: f, content: data.toString('base64'), type: type});
       console.log('image file is initialized');
     });
   }
   else{
-    //let content = fs.readFileSync(f, 'utf8')
     fs.readFile(f, 'utf8', function (err,data) {
       if (err) {
         console.log('error', err)
-        socket.emit('cat file', {path: f, error: err}); //envoyer à tout le monde
+        socket.emit('cat file', {path: f, error: err});
       }
-      //  console.log(data)
-      socket.emit('cat file', {path: f, content: data, type:type}); //envoyer à tout le monde
+      socket.emit('cat file', {path: f, content: data, type:type});
     });
   }
 
 
 }
 
-// server.listen(3000,  '192.168.1.85', () => {
 //server.listen(3000, '0.0.0.0', () => {
-server.listen(3000, () => { // ok for local network on linux
+server.listen(3000, () => {
   console.log('listening on *:3000');
 });

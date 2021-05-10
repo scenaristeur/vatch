@@ -45,6 +45,7 @@ index.html on vatch-vite
 ```
 
 
+- https://stackoverflow.com/questions/59478402/how-do-i-send-image-to-server-via-socket-io
 
   - manipulation with vis/vuejs https://github.com/Thomaash/me/blob/release/src/components/Vis.vue
 
