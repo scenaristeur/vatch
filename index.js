@@ -1,4 +1,8 @@
 // root is the root folder you want to use
+/* '../data' pour sortir de dossier de l'appli, ou
+/* './data' pour le mettre dans l'appli ,
+/* mais bloque parfois le renommage par
+/* l'explorateur quand l'appli est lancée, à voir*/
 let root = './data'
 
 const path = require('path');
@@ -20,7 +24,8 @@ const http = require('http');
 const server = http.createServer(app);
 const io = require("socket.io")(server, {
   cors: {
-    origin: "http://localhost:3001",
+    // origin: "http://localhost:3001",
+    origin: '*',
     methods: ["GET", "POST"]
   }
 });

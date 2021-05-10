@@ -73,7 +73,8 @@
         "background": "#D2E5FF",
         "border": "#2B7CE9"
       },
-      "group": "abstract","shape": "ellipse",
+      "group": "abstract",
+      "shape": "ellipse",
       "built": true
     },
     {
@@ -284,6 +285,39 @@
       "group": "abstract",
       "shape": "ellipse",
       "built": true
+    },
+    {
+      "id": "#MaterialObject",
+      "label": "MaterialObject",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "group": "abstract",
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#ImmaterialObject",
+      "label": "ImmaterialObject",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "group": "abstract",
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Software",
+      "label": "Software",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "group": "abstract",
+      "shape": "ellipse",
+      "built": true
     }
   ],
   "edges": [
@@ -448,6 +482,36 @@
       "to": "#Electron",
       "label": "hasPart",
       "id": "0d575da3-24be-489a-a777-d138a747f648"
+    },
+    {
+      "from": "#MaterialObject",
+      "to": "#Object",
+      "label": "a",
+      "id": "758128e9-3628-482c-9c5a-99f842ad4891"
+    },
+    {
+      "from": "#ImmaterialObject",
+      "to": "#Object",
+      "label": "a",
+      "id": "8803de6c-e833-4716-9501-30e7e488e0f8"
+    },
+    {
+      "from": "#Software",
+      "to": "#ImmaterialObject",
+      "label": "a",
+      "id": "477d32f2-2692-4263-a016-a8645cfe9ca5"
+    },
+    {
+      "from": "#Person",
+      "to": "#Object",
+      "label": "use",
+      "id": "8b7163b7-73af-4ae3-b61a-d91d23ff79e7"
+    },
+    {
+      "from": "#Person",
+      "to": "#Object",
+      "label": "build",
+      "id": "eb76dbcb-c680-4324-bdcb-ed5dec33e706"
     }
   ]
 }
