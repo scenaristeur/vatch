@@ -37,15 +37,66 @@ index.js on vatch
 server.listen(3000, () => { // ok for local network on linux
   console.log('listening on *:3000');
   });
-```
+  ```
 
-index.html on vatch-vite
-```
+  index.html on vatch-vite
+  ```
   var socket = io(':3000');
-```
+  ```
 
 
-- https://stackoverflow.com/questions/59478402/how-do-i-send-image-to-server-via-socket-io
+  # vatch on Android
+  - install Thermux
+  - in Thermux, run ```apt update && apt upgrade```, ```apt install coreutils nodejs git```
+  - then run the vatch server installation process basic vatch client will be availble at http://localhost:3000 on your mobile
+  - if you want to connect from another device on the local network, grab your phone ip with ```ifconfig```
+  - Want to create a shortcut for vatch ? -> install Thermux:Widget https://wiki.termux.com/wiki/Termux:Widget
+  and create vatch.sh in .shortcuts/tasks/
+  ```
+  mkdir -p /data/data/com.termux/files/home/.shortcuts/tasks
+  nano /data/data/com.termux/files/home/.shortcuts/tasks/vatch.sh
+  ```
+  with this code
+  vatcher.sh
+  ```
+  #!/usr/bin/bash
+  cd ~/vatch #directory where you have installed vatch
+  node .
+  ```
+  Then you can use the widget to run vatch server
+
+  For more  convinience you can create a shortcut for launching the default vatch client on port 3000
+  creating a vatch-client.sh file in the same folder as above with this content
+
+  ```
+  #!/usr/bin/bash
+  am start --user 0 -n com.android.chrome/com.google.android.apps.chrome.Main http://localhost:3000
+  ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  - https://stackoverflow.com/questions/59478402/how-do-i-send-image-to-server-via-socket-io
 
   - manipulation with vis/vuejs https://github.com/Thomaash/me/blob/release/src/components/Vis.vue
 

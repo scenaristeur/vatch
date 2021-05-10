@@ -94,7 +94,7 @@ io.on('connection', (socket) => {
 
 async function readFile(f, socket){
   let type = await FileType.fromFile('.'+path.sep+f)
-  console.log("mime type",type);
+  type != undefined ? console.log("mime type",type) : ""
   //image loading
   if(type != undefined && type.mime != undefined && type.mime.split('/')[0] == 'image'){
     fs.readFile(f, /*{encoding: 'base64'},*/ function (err,data) {
