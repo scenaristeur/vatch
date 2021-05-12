@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vatch is vatching your system</title>
+  <!-- vuejs -->
+  <script type="text/javascript" src="./js/vue.js"></script>
+  <!-- production version, optimized for size and speed -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+  <script type="text/javascript" src="./js/vuex.js"></script>
+
+  <!-- bootstrap -->
+  <script type="text/javascript" src="./js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="./styles/bootstrap.min.css">
+  <!-- visjs -->
+  <script type="text/javascript" src="./js/vis-network.min.js"></script>
+  <link rel="stylesheet" href="./styles/network.css">
+
+  <!-- custom -->
+  <link rel="stylesheet" href="./styles/layout.css">
+
+  <link rel="stylesheet" href="./styles/chat.css">
+</head>
+<body>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        Column
+      </div>
+      <div class="col">
+        Column
+        <button type="button" class="btn btn-primary">Primary</button>
+      </div>
+      <div class="col">
+        Column
+        <div id="app">
+          {{ message }}
+        </div>
+
+        <div id="app-7">
+          <ol>
+            <!--
+            Now we provide each todo-item with the todo object
+            it's representing, so that its content can be dynamic.
+            We also need to provide each component with a "key",
+            which will be explained later.
+          -->
+          <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id"
+          ></todo-item>
+        </ol>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="box">
+  <div id="mynetwork" class="network"></div>
+  <div class="preview">
+    <textarea id="content" rows="25" cols="50" style="display:none" >
+    </textarea>
+    <img id="image" width="425px" height="400px" style="display:none" />
+    <br>
+    <input id="path" autocomplete="off" />
+    <button onclick="save()">Save</button>
+    <button onclick="clusterByGroup()">Cluster By group</button>
+
+  </div>
+  <div class="chat">
+    <div class="wrapper">
+      <ul id="messages"></ul>
+    </div>
+  </div>
+  <div class="doc">
+    <!-- <a href="./babylon" >Baby</a> -->
+    <a href="https://scenaristeur.github.io/ipgs/about" target="_blank">WAnt to CReate BIg MindMaps ? TRy Ipgs</a>
+  </div>
+
+  <form id="form" action="">
+    <input id="input" autocomplete="off" /><button>Send</button>
+  </form>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+
+//init
+let pathsep='/' //  ... / for linux, \\ for Windows
+
+
+// create an array with nodes
+let nodes = new vis.DataSet([]);
+
+// create an array with edges
+let edges = new vis.DataSet([]);
+
+// create a network
+let container = document.getElementById('mynetwork');
+
+// provide the data in the vis format
+let data = {
+  nodes: nodes,
+  edges: edges
+};
+let options = {
+  interaction: {
+    navigationButtons: true,
+    //  keyboard: true,
+  },
+  edges : {arrows: 'to'}};
+
+  // initialize your network!
+  let network = new vis.Network(container, data, options);
+
+  // Socket
+  let socket = io();
+
+  let messages = document.getElementById('messages');
+  let form = document.getElementById('form');
+  let input = document.getElementById('input');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (input.value) {
+      socket.emit('chat message', input.value);
+      input.value = '';
+    }
+  });
+
+  function save(){
+    let content = document.getElementById("content").value
+    let path = document.getElementById("path").value
+    console.log(path, content)
+    socket.emit('write file', {path: path, content: content});
+  }
+
+  socket.on('init', function(init) {
+    pathsep = init.pathsep
+    let item = document.createElement('li');
+    item.textContent = init.welcome;
+    messages.appendChild(item);
+    //  window.scrollTo(0, document.body.scrollHeight);
+  });
+
+  socket.on('chat message', function(msg) {
+    let item = document.createElement('li');
+    item.textContent = msg;
+    messages.appendChild(item);
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+
+  socket.on('watcher event', function(msg) {
+    process(msg)
+    let item = document.createElement('li');
+    item.textContent = JSON.stringify(msg);
+    messages.appendChild(item);
+    //  window.scrollTo(0, document.body.scrollHeight);
+  });
+
+  socket.on('cat file', function(msg) {
+    let item = document.createElement('li');
+    item.textContent = msg;
+    messages.appendChild(item);
+    //  window.scrollTo(0, document.body.scrollHeight);
+
+    processFile(msg)
+  });
+
+  socket.on('connect', () => {
+    console.log('user connected');
+    document.body.style.backgroundColor = "rgba(11,156,49,0.1)"
+  });
+  socket.on('disconnect', () => {
+    console.log('user disconnected');
+    document.body.style.backgroundColor = "rgba(156,11,49,0.1)"
+  });
+
+  function processFile(msg){
+    if(msg.error){
+      alert("Error: ",msg.error)
+      return
+    }
+    if (msg.type == undefined){
+      msg.ext = msg.path.split('.').pop()
+    }
+    //console.log(msg)
+    try{
+      document.getElementById("path").value = msg.path
+      document.getElementById('image').style.display = "none"
+      document.getElementById('content').style.display = "block"
+      document.getElementById("content").value = msg.content
+      if (msg.type == "application/json" || msg.ext =="json"){
+        msg.content = JSON.parse(msg.content)
+      }else if(msg.type != undefined && msg.type.mime != undefined && msg.type.mime.split('/')[0] == 'image'){
+        //console.log(msg.content)
+        let src= 'data:'+msg.type.mime+';base64,' + msg.content;
+        //console.log("image",src)
+        document.getElementById('image').src = src
+        document.getElementById('image').style.display = "block"
+        document.getElementById('content').style.display = "none"
+
+        // let ctx = document.getElementById('canvas').getContext('2d');
+        // let img = new Image();
+        // //let src= 'data:'+msg.type.mime+',' + msg.content;
+        // console.log("src",src)
+        // img.src = src
+        // ctx.drawImage(img, 0, 0);
+        // console.log(ctx)
+
+      }else{
+        console.log(msg)
+      }
+
+      msg.content.nodes != undefined ? nodes.update(msg.content.nodes) : ""
+      msg.content.edges != undefined ? edges.update(msg.content.edges) : ""
+
+      edges.forEach((e) => {
+        if (e.label == "a"){
+          nodes.get(e.from).group = e.to
+        }
+      });
+
+    }catch(e){
+      console.log(e)
+    }
+
+  }
+
+  function process(msg){
+    //console.log(msg)
+    msg.forEach((item, i) => {
+      switch (item.event) {
+        case "add":
+        add(item)
+        break;
+        case "addDir":
+        addDir(item)
+        //  linkContainer(item)
+        break;
+        case "unlink":
+        unlink(item)
+        unlinkContainer(item)
+        break;
+        case "unlinkDir":
+        unlinkDir(item)
+        unlinkContainer(item)
+        break;
+        case "change":
+        change(item)
+        break;
+        default:
+
+      }
+    });
+    //  console.log(network)
+  }
+
+  //https://visjs.github.io/vis-data/data/dataset.html
+  // https://visjs.github.io/vis-network/docs/network/manipulation.html
+  // https://visjs.github.io/vis-network/docs/network/#methodManipulation
+
+  function add(item){
+    let color = '#55D5E0'
+    let label = item.path.split(pathsep).pop()
+    nodes.update([{
+      id: item.path, label:label, color:color, type: 'file', group: "file"
+    }])
+    linkContainer(item)
+    if (label.startsWith('#')){
+      socket.emit('read file', item.path);
+    }
+
+  }
+  function addDir(item){
+    let p = item.path.split(pathsep)
+    let color = p.length == 1 ? '#F26619' : '#F6B12D'
+    nodes.update([{
+      id: item.path, label:p.pop(),shape: 'box', color: color, type: 'folder', group: "folder"
+    }])
+    linkContainer(item)
+  }
+  function unlink(item){
+    nodes.remove(item.path);
+  }
+  function unlinkDir(item){
+    nodes.remove(item.path);
+  }
+  function linkContainer(item){
+    let splitted = item.path.split(pathsep)
+    if (splitted.length > 1){
+      let to = item.path
+      splitted.pop()
+      let from = splitted.join(pathsep)
+      let exist_edge =  edges.get({
+        filter: function (e) {
+          return e.from == from && e.to == to && e.label == "contains";
+        }
+      });
+      if(exist_edge.length == 0){
+        let edge = {from: from, to: to, label: "contains"}
+        edges.add([edge])
+      }
+    }
+  }
+  function unlinkContainer(item){
+    let splitted = item.path.split(pathsep)
+    if (splitted.length > 1){
+      let to = item.path
+      splitted.pop()
+      let from = splitted.join(pathsep)
+      let edges_to_remove =  edges.get({
+        filter: function (e) {
+          return e.from == from && e.to == to && e.label == "contains";
+        }
+      });
+      edges.remove(edges_to_remove)
+    }
+  }
+
+  function change(item){
+    let n = nodes.get(item.path)
+    n.shape = "star"
+    nodes.update(n)
+  }
+
+  // network events
+  network.on('selectNode', evt => {
+    if (evt.nodes.length == 1) {
+      if (network.isCluster(evt.nodes[0]) == true) {
+        network.openCluster(evt.nodes[0]);
+      }else{
+        let n_id = evt.nodes[0]
+        input.value = n_id
+        let n = nodes.get(n_id);
+        if (n.type == 'file'){
+          socket.emit('read file', n.id);
+          n.shape = "ellipse"
+          nodes.update(n)
+        }else if (n.type == "folder"){
+          n.shape = "box"
+          nodes.update(n)
+        }
+      }
+    }
+  })
+
+  /**
+  * Extract given field from items array and return unique values in an array
+  */
+  function fieldFromItems(items, field) {
+    var tmpHash = {};
+    for (var n in items) {
+      tmpHash[items[n][field]] = true;
+    }
+
+    return Object.keys(tmpHash);
+  }
+
+
+  function collectGroups() {
+    var items = data.nodes.get({
+      fields: ['group']
+    });
+    return fieldFromItems(items, 'group');
+  }
+
+  function clusterByGroup(){
+    // Determine all distinct group id's
+    var groups = collectGroups();
+
+    // Cluster per group
+    for (var n in groups) {
+      var group = groups[n];
+
+      network.cluster({
+        joinCondition: function(item) {
+          return item.group == group;
+        },
+        clusterNodeProperties: {
+          label: 'Group ' + group,
+          borderWidth: 3,
+          shape: "database",
+          color: 'orange'
+        }
+      });
+    }
+
+  }
+
+  var app = new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue!'
+    }
+  })
+
+  Vue.component('todo-item', {
+    props: ['todo'],
+    template: '<li>{{ todo.text }}</li>'
+  })
+
+  var app7 = new Vue({
+    el: '#app-7',
+    data: {
+      groceryList: [
+        { id: 0, text: 'Vegetables' },
+        { id: 1, text: 'Cheese' },
+        { id: 2, text: 'Whatever else humans are supposed to eat' }
+      ]
+    }
+  })
+
+
+  </script>
+</body>
+</html>

@@ -2,12 +2,18 @@ class Io {
   constructor() {
     // this.reset()
     console.log("Sock OUUUUIIIIIIZ")
-    // console.log(sources)
-    // this.sources = sources
-    // this.graphs = []
+    this.io = require("socket.io")(server, {
+      cors: {
+        // origin: "http://localhost:3001",
+        origin: '*',
+        methods: ["GET", "POST"]
+      }
+    });
+    this.io.init()
+
   }
 
-  hello(){
+  init(){
     console.log("soc hello")
   }
 
