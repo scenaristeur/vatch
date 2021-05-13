@@ -13,8 +13,9 @@ First launch the server on port 3000
 
 To install the server :
 ```
-https://github.com/scenaristeur/vatch.git
+git clone https://github.com/scenaristeur/vatch.git
 cd vatch
+git submodule update --init --recursive // git submodule update --recursive --remote for later updates
 npm install
 node .
 // explore on http://localhost:3000
@@ -24,7 +25,7 @@ Next launch the client on port 3001
 
 To install the client :
 ```
-https://github.com/scenaristeur/vatch-vite.git
+git clone https://github.com/scenaristeur/vatch-vite.git
 cd vatch-vite
 npm install
 npm run dev
