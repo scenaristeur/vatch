@@ -1,0 +1,4 @@
+[submodule "public/vatch-vite"]
+	path = public/vatch-vite
+	url = https://github.com/scenaristeur/vatch-vite.git
+	branch = gh-pages
