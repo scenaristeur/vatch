@@ -44,6 +44,7 @@ io.on('connection', (socket) => {
   let users_nb = Object.keys(users).length
   console.log(users_nb+" users",users)
   socket.broadcast.emit('chat message', 'A new user '+users_nb); //envoyer à tous les autres
+  io.emit('users', users); //envoyer à tous les autres
   socket.emit('init', {pathsep: path.sep, welcome: "hi", users: users_nb}); //envoyer au nouveau
   socket.emit('watcher event', watcher.paths)
   socket.on('chat message', (msg) => {
@@ -88,6 +89,7 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     delete users[socket.id]
+    io.emit('users', users); 
     console.log('user disconnected');
   });
 });
