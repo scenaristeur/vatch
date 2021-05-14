@@ -7,5 +7,10 @@
     "express": "^4.17.1",
     "file-type": "^16.4.0",
     "socket.io": "^4.0.2"
+  },
+  "scripts": {
+    "serve": "node .",
+    "client:update": "git submodule update --recursive --remote ",
+    "client:get": "git submodule update --init --recursive"
   }
 }
