@@ -1,0 +1,605 @@
+{
+  "nodes": [
+    {
+      "id": "#Les_Bricodeurs",
+      "label": "Les Bricodeurs",
+      "color": {
+        "background": "#1FBC9C",
+        "border": "#3D556E"
+      },
+      "shape": "circle",
+      "built": true,
+      "props": []
+    },
+    {
+      "id": "#collectif",
+      "label": "collectif de personnes physiques",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true,
+      "props": []
+    },
+    {
+      "id": "#UneCulture",
+      "label": "une culture",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true,
+      "props": []
+    },
+    {
+      "id": "#DesObjectifsCommuns",
+      "label": "des objectifs communs",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true,
+      "props": []
+    },
+    {
+      "id": "#DesProjets",
+      "label": "des projets",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true,
+      "props": []
+    },
+    {
+      "id": "#Modèles_de_gouvernance_innovants",
+      "label": "Modèles de gouvernance innovants",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Qualité_de_Membre",
+      "label": "Qualité de Membre",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#les_valeurs_et_objectifs_du__manifeste",
+      "label": "accepte les valeurs et objectifs du  manifeste",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true,
+      "props": []
+    },
+    {
+      "id": "#acquitement_de_la_cotisation",
+      "label": "acquitement de la cotisation",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Participer_aux_Activités",
+      "label": "Participer aux Activités",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Participer_aux_Ateliers",
+      "label": "Participer aux Ateliers",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Participer_aux_formations",
+      "label": "Participer aux formations",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Participer_à_l'organisation_des_ateliers_et_des_formations",
+      "label": "Participer à l'organisation des ateliers et des formations",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Placer_ses_enfants_aux_atelisers_jeunes",
+      "label": "Placer ses enfants aux atelisers jeunes",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Membres_Actifs",
+      "label": "Membres Actifs",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#A_jour_des_ses_cotisations",
+      "label": "A jour des ses cotisations",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#impliqué_dans_l'organisation_d'au_moins_un_atelier_au_cours_de_l'année_écoulée",
+      "label": "impliqué dans l'organisation d'au moins un atelier au cours de l'année écoulée",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Organes",
+      "label": "Organes",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#CA",
+      "label": "CA",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Conseil_d'administration",
+      "label": "Conseil d'administration",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Le_conseil_d'administration_est_l’organe_de_décision_des_bricodeurs._Il_est_composé_du_comité_exécutif_et_du_conseil_stratégique._Le_conseil_d’administration_prend_les_décisions_importantes_de_l’association",
+      "label": "Le conseil d'administration est l’organe de décision des bricodeurs. Il est composé du comité exécutif et du conseil stratégique. Le conseil d’administration prend les décisions importantes de l’association",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#CS",
+      "label": "CS",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Conseil_Stratégique",
+      "label": "Conseil Stratégique",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Le_conseil_stratégique_est_responsable_de_définir_la_vision,_structure_générale_et_politique_éditoriale_de_l’association_et_valide_les_grands_projets",
+      "label": "Le conseil stratégique est responsable de définir la vision, structure générale et politique éditoriale de l’association et valide les grands projets",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Decision",
+      "label": "Decisions Importantes",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true,
+      "props": []
+    },
+    {
+      "id": "#La_Vision",
+      "label": "La Vision",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#La_Structure_Générale",
+      "label": "La Structure Générale",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Politique_Editoriale",
+      "label": "Politique Editoriale",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Les_Grands_Projets",
+      "label": "Les Grands Projets",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Personnalités_du_monde_numérique_engagé",
+      "label": "Personnalités du monde numérique engagé",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Parité_H/F",
+      "label": "Parité H/F",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Orienter_les_grandes_décisions",
+      "label": "Orienter les grandes décisions",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#cooptation_par_un_membre_du_CA_et_vote",
+      "label": "cooptation par un membre du CA et vote",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Bénévole",
+      "label": "Bénévole",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Salarié",
+      "label": "Salarié",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Intervenant",
+      "label": "Intervenant",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "#Président",
+      "label": "Président",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    }
+  ],
+  "edges": [
+    {
+      "from": "#Les_Bricodeurs",
+      "to": "#collectif",
+      "label": "type",
+      "id": "b29f7be4-6cab-4eb7-ab08-1ecbab528dcd"
+    },
+    {
+      "from": "#Les_Bricodeurs",
+      "to": "#UneCulture",
+      "label": "definiPar",
+      "id": "bdafcc9f-e5ed-4ab5-8eae-2929162136af"
+    },
+    {
+      "from": "#Les_Bricodeurs",
+      "to": "#DesObjectifsCommuns",
+      "label": "definiPar",
+      "id": "c3b1ab84-a47e-4c5b-ac28-14cb8cfc2c92"
+    },
+    {
+      "from": "#Les_Bricodeurs",
+      "to": "#DesProjets",
+      "label": "definiPar",
+      "id": "72f73316-963c-4f99-b7b9-eb9c38b026be"
+    },
+    {
+      "from": "#Les_Bricodeurs",
+      "to": "#Modèles_de_gouvernance_innovants",
+      "label": "inspiréPar",
+      "id": "3b028f5e-32a7-4ed6-9efa-32e9adf86f0f"
+    },
+    {
+      "from": "#Les_Bricodeurs",
+      "to": "#Qualité_de_Membre",
+      "label": "adhésion",
+      "id": "a2622daa-73d1-49a6-9df0-5eb104cc4f54"
+    },
+    {
+      "from": "#Qualité_de_Membre",
+      "to": "#les_valeurs_et_objectifs_du__manifeste",
+      "label": "condition",
+      "id": "129510db-51b6-48a7-abcd-6f6b11cf0047"
+    },
+    {
+      "from": "#Qualité_de_Membre",
+      "to": "#acquitement_de_la_cotisation",
+      "label": "condition",
+      "id": "00807ea7-2a88-4369-9a0d-39ff65ee8dc0"
+    },
+    {
+      "from": "#Qualité_de_Membre",
+      "to": "#Participer_aux_Activités",
+      "label": "nécessaire pour",
+      "id": "992c41ec-100d-4a83-b4c8-f426784520e7"
+    },
+    {
+      "from": "#Participer_aux_Activités",
+      "to": "#Participer_aux_Ateliers",
+      "label": "hasPart",
+      "id": "281290e7-47e1-4c71-b722-c15401ac3f36"
+    },
+    {
+      "from": "#Participer_aux_Activités",
+      "to": "#Participer_aux_formations",
+      "label": "hasPart",
+      "id": "2944a555-6fc2-4d99-bb3b-e2e98ae6e206"
+    },
+    {
+      "from": "#Participer_aux_Activités",
+      "to": "#Participer_à_l'organisation_des_ateliers_et_des_formations",
+      "label": "hasPart",
+      "id": "20b5b7e0-5956-4b36-bf35-1e25e3452683"
+    },
+    {
+      "from": "#Participer_aux_Activités",
+      "to": "#Placer_ses_enfants_aux_atelisers_jeunes",
+      "label": "hasPart",
+      "id": "b4730ebb-1ea9-4608-a1dd-4a55fc978193"
+    },
+    {
+      "from": "#Qualité_de_Membre",
+      "to": "#Membres_Actifs",
+      "label": "hasPart",
+      "id": "7554e81e-e41b-4cc7-912c-5dfe89c822b9"
+    },
+    {
+      "from": "#Membres_Actifs",
+      "to": "#A_jour_des_ses_cotisations",
+      "label": "condition",
+      "id": "8618c8f0-a8fc-4f59-a73e-d7277ffb6e01"
+    },
+    {
+      "from": "#Membres_Actifs",
+      "to": "#impliqué_dans_l'organisation_d'au_moins_un_atelier_au_cours_de_l'année_écoulée",
+      "label": "condition",
+      "id": "e61f1ec5-7261-4821-afb1-3e6f501f2309"
+    },
+    {
+      "from": "#Les_Bricodeurs",
+      "to": "#Organes",
+      "label": "hasPart",
+      "id": "e0d6080e-0918-4086-87a2-fa25c62b731d"
+    },
+    {
+      "from": "#Organes",
+      "to": "#CA",
+      "label": "hasPart",
+      "id": "c5a57ece-6c66-4226-98b5-0c8b7dbc4562"
+    },
+    {
+      "from": "#CA",
+      "to": "#Conseil_d'administration",
+      "label": "label",
+      "id": "4e007339-b397-4d85-8f30-d2aa3a8e2dbc"
+    },
+    {
+      "from": "#CA",
+      "to": "#Le_conseil_d'administration_est_l’organe_de_décision_des_bricodeurs._Il_est_composé_du_comité_exécutif_et_du_conseil_stratégique._Le_conseil_d’administration_prend_les_décisions_importantes_de_l’association",
+      "label": "description",
+      "id": "c651c404-19a5-489f-8b35-895695edce48"
+    },
+    {
+      "from": "#CA",
+      "to": "#CS",
+      "label": "hasPart",
+      "id": "bd190727-96b9-45e8-8f5a-8dd487d4d90c"
+    },
+    {
+      "from": "#CS",
+      "to": "#Conseil_Stratégique",
+      "label": "label",
+      "id": "20994735-3179-4897-8757-416e1d4c7235"
+    },
+    {
+      "from": "#CS",
+      "to": "#Le_conseil_stratégique_est_responsable_de_définir_la_vision,_structure_générale_et_politique_éditoriale_de_l’association_et_valide_les_grands_projets",
+      "label": "raisonDetre",
+      "id": "73e8b595-03ff-4ca5-86a3-5f869e5ab631"
+    },
+    {
+      "from": "#CA",
+      "to": "#Decision",
+      "label": "prend",
+      "id": "ddcfc2bc-a25c-41c9-9f92-c9e5f5981dbe"
+    },
+    {
+      "from": "#CS",
+      "to": "#La_Vision",
+      "label": "définit",
+      "id": "ba733c13-10a6-45ed-a17d-6bf3c7f026be"
+    },
+    {
+      "from": "#CS",
+      "to": "#La_Structure_Générale",
+      "label": "définit",
+      "id": "132dcd4f-e23a-48c1-a77e-4044a27cefbd"
+    },
+    {
+      "from": "#CS",
+      "to": "#Politique_Editoriale",
+      "label": "définit",
+      "id": "89e2598f-df31-4a2b-a5b3-10dc64f1682d"
+    },
+    {
+      "from": "#CS",
+      "to": "#Les_Grands_Projets",
+      "label": "valide",
+      "id": "e79cbdd5-f37a-4b46-9602-6c0e2b96deb1"
+    },
+    {
+      "from": "#CS",
+      "to": "#Personnalités_du_monde_numérique_engagé",
+      "label": "membres",
+      "id": "0e8a1240-c4bb-4d36-890d-a37ab375bc78"
+    },
+    {
+      "from": "#Personnalités_du_monde_numérique_engagé",
+      "to": "#Parité_H/F",
+      "label": "condition",
+      "id": "a04d15c8-3fb1-4c49-b35a-8f026f83076c"
+    },
+    {
+      "from": "#CS",
+      "to": "#Orienter_les_grandes_décisions",
+      "label": "rôle",
+      "id": "63a6af88-3c3a-495b-b89b-246e375178f9"
+    },
+    {
+      "from": "#Personnalités_du_monde_numérique_engagé",
+      "to": "#cooptation_par_un_membre_du_CA_et_vote",
+      "label": "condition",
+      "id": "1e91ce09-4821-4630-a89b-60c2ee100ec8"
+    },
+    {
+      "from": "#CS",
+      "to": "#Bénévole",
+      "label": "statut",
+      "id": "4ad7e808-4a06-4c20-a661-27d0f94ed501"
+    },
+    {
+      "from": "#CS",
+      "to": "#Salarié",
+      "label": "incompatible",
+      "id": "32328909-4f7e-45e5-b6bd-cef37a337957"
+    },
+    {
+      "from": "#CS",
+      "to": "#Intervenant",
+      "label": "incompatible",
+      "id": "9f660ebb-debe-4779-a6e3-e6eb38473de5"
+    },
+    {
+      "from": "#CS",
+      "to": "#Président",
+      "label": "présidéPar",
+      "id": "d807b082-305a-4dc6-807e-226374f163e4"
+    },
+    {
+      "from": "#Président",
+      "to": "#CS",
+      "label": "ne peut pas voter au",
+      "id": "614169e8-9327-426a-a552-8555d8f698ae"
+    }
+  ]
+}

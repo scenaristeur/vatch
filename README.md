@@ -5,6 +5,9 @@ the new file/graph explorer generation
 - vatcher is a server that listen for change in your system through chokidar and send it through socket.io to the client
 
 
+- to open the browser, use ````npm run serve ``` instead of ``` node .```
+
+
 # vatcher parts
 - vatch server : https://github.com/scenaristeur/vatch
 - vatch-vite : a Vuejs client app for vatch server : https://github.com/scenaristeur/vatch-vite

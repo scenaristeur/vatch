@@ -31,6 +31,9 @@ const io = require("socket.io")(server, {
 // list https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
 //var fs = require('fs');
 //var path = require('path');
+
+let storage = {root: root, folders: [], files: []}
+
 var walk = function(dir, done) {
   var results = [];
   fs.readdir(dir, function(err, list) {
@@ -39,14 +42,17 @@ var walk = function(dir, done) {
     (function next() {
       var file = list[i++];
       if (!file) return done(null, results);
+      let short = file
       file = path.resolve(dir, file);
       fs.stat(file, function(err, stat) {
         if (stat && stat.isDirectory()) {
+          storage.folders.push(short)
           walk(file, function(err, res) {
             results = results.concat(res);
             next();
           });
         } else {
+          storage.files.push(short)
           results.push(file);
           next();
         }
@@ -59,7 +65,10 @@ var walk = function(dir, done) {
 walk(root, function(err, results) {
   if (err) throw err;
   console.log(results);
+  console.log("storage", storage)
 });
+
+
 
 
 

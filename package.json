@@ -9,7 +9,7 @@
     "socket.io": "^4.0.2"
   },
   "scripts": {
-    "serve": "node .",
+    "serve": "node . && start http://localhost:3000",
     "client:update": "git submodule update --recursive --remote ",
     "client:get": "git submodule update --init --recursive"
   }
