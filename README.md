@@ -7,6 +7,8 @@ the new file/graph explorer generation
 
 - to open the browser, use ````npm run serve ``` instead of ``` node .```
 
+- ! the last line ```  open('http://localhost:3000');``` is detected as suspicios by Avast Antivirus but it is just a shortcut to open the browser in the same time as the server, but if you prefer, you can remove/comment  it
+
 
 # vatcher parts
 - vatch server : https://github.com/scenaristeur/vatch

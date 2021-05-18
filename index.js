@@ -5,6 +5,7 @@
 /* l'explorateur quand l'appli est lancée, à voir*/
 let root = './data'
 
+const open = require('open');
 const path = require('path');
 console.log(path.sep)
 if (path.sep === "\\") {
@@ -172,4 +173,5 @@ async function readFile(f, socket){
 //server.listen(3000, '0.0.0.0', () => {
 server.listen(3000, () => {
   console.log('listening on *:3000');
+  open('http://localhost:3000');
 });

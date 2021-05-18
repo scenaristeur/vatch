@@ -1,11 +1,12 @@
 {
   "name": "vatch",
-  "description":"https://github.com/scenaristeur/vatch",
+  "description": "https://github.com/scenaristeur/vatch",
   "version": "0.0.1",
   "dependencies": {
     "chokidar": "^3.5.1",
     "express": "^4.17.1",
     "file-type": "^16.4.0",
+    "open": "^8.0.9",
     "socket.io": "^4.0.2"
   },
   "scripts": {
