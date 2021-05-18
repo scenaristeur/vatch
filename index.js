@@ -173,5 +173,5 @@ async function readFile(f, socket){
 //server.listen(3000, '0.0.0.0', () => {
 server.listen(3000, () => {
   console.log('listening on *:3000');
-  open('http://localhost:3000');
+  open('http://localhost:3000/vatch-vue/');
 });
