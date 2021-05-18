@@ -1,20 +1,34 @@
 
 const fs = require('fs')
 const chokidar = require('chokidar')
+const path = require('path');
 
 class Watcher {
   constructor(io, root) {
     this.paths = []
     this.root= root || './data'
     this.init(this.root)
+
     // One-liner for current directory
-    chokidar.watch(root).on('all', (event, path) => {
-      let p = {event: event, path: path}
+    let watcherChokidar = chokidar.watch(root)
+    watcherChokidar.on('all', (event, rel_path) => {
+      let p = {event: event, path: rel_path}
+
+      p.parts = rel_path.split(path.sep)
+      //  p.parent = p.parts.pop().join(path.sep)
       this.paths.push(p)
-      io.emit('watcher event', [{event: event, path: path}]);
+      io.emit('watcher event', [{root: this.root, event: event, path: rel_path}]);
       //  console.log(this.paths)
     });
-    
+
+
+
+    watcherChokidar.on('ready', logWatched)
+
+    function logWatched() {
+      console.log("GET WATCHED",  watcherChokidar.getWatched()   )
+    }
+
   }
 
   init(root){
