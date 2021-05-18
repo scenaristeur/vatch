@@ -48,6 +48,11 @@ server.listen(3000, () => { // ok for local network on linux
   var socket = io(':3000');
   ```
 
+# submodule
+
+```
+git submodule add -b gh-pages https://github.com/scenaristeur/vatch-vue.git ./public
+```
 
   # vatch on Android
   - install Thermux
