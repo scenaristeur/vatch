@@ -1,4 +1,0 @@
-[submodule "public/vatch-vue"]
-	path = public/vatch-vue
-	url = https://github.com/scenaristeur/vatch-vue.git
-	branch = gh-pages
