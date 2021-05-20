@@ -13,5 +13,9 @@
     "serve": "node . && start http://localhost:3000",
     "client:update": "git submodule update --recursive --remote ",
     "client:get": "git submodule update --init --recursive"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2"
   }
 }

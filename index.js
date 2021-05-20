@@ -127,8 +127,8 @@ io.on('connection', (socket) => {
       });
     }
   });
-  socket.on('read file', (f) => {
-    readFile(f, socket)
+  socket.on('read file', (params) => {
+    readFile(params, socket)
   });
 
   socket.on('disconnect', () => {
@@ -138,17 +138,25 @@ io.on('connection', (socket) => {
   });
 });
 
-async function readFile(f, socket){
+async function readFile(params, socket){
+  let f = params.path
+  if (f== undefined){
+    console.log("oho there is no params.path", params)
+    return
+  }
   let type = await FileType.fromFile('.'+path.sep+f)
   type != undefined ? console.log("mime type",type) : ""
   //image loading
   if(type != undefined && type.mime != undefined && type.mime.split('/')[0] == 'image'){
     fs.readFile(f, /*{encoding: 'base64'},*/ function (err,data) {
       if (err) {
-        console.log('error')
-        socket.emit('cat file', {path: f, error: err}); //envoyer à tout le monde
+        console.log('error', err)
+        params.error = err
+        socket.emit('cat file', params);
       }
-      socket.emit('cat file', {path: f, content: data.toString('base64'), type: type});
+      params.content = data.toString('base64')
+      params.type = type
+      socket.emit('cat file', params);
       console.log('image file is initialized');
     });
   }
@@ -156,9 +164,12 @@ async function readFile(f, socket){
     fs.readFile(f, 'utf8', function (err,data) {
       if (err) {
         console.log('error', err)
-        socket.emit('cat file', {path: f, error: err});
+        params.error = err
+        socket.emit('cat file', params);
       }
-      socket.emit('cat file', {path: f, content: data, type:type});
+      params.content = data
+      params.type = type
+      socket.emit('cat file', params);
     });
   }
 
@@ -168,5 +179,5 @@ async function readFile(f, socket){
 //server.listen(3000, '0.0.0.0', () => {
 server.listen(3000, () => {
   console.log('listening on *:3000');
-  open('http://localhost:3000/vatch-vue');
+//  open('http://localhost:3000/vatch-vue');
 });
