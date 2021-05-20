@@ -7,7 +7,7 @@ the new file/graph explorer generation
 
 - to open the browser, use ````npm run serve ``` instead of ``` node .```
 
-- ! the last line ```  open('http://localhost:3000');``` is detected as suspicios by Avast Antivirus but it is just a shortcut to open the browser in the same time as the server, but if you prefer, you can remove/comment  it
+- ! the last line ```  open('http://localhost:3000');``` is can be detected as suspicios by Avast Antivirus but it is just a shortcut to open the browser in the same time as the server, but if you prefer, you can remove/comment  it
 
 
 # vatcher parts
@@ -20,21 +20,24 @@ To install the server :
 ```
 git clone https://github.com/scenaristeur/vatch.git
 cd vatch
-git submodule update --init --recursive // git submodule update --recursive --remote for later updates
+npm install
+git submodule update --init --recursive
+// or git submodule update --recursive --remote for later updates
 npm install
 node .
 // explore on http://localhost:3000
 ```
-Next launch the client on port 3001
+
+The client is managed as a submodule in another repository :
 
 
-To install the client :
+To customize / install the client :
 ```
-git clone https://github.com/scenaristeur/vatch-vite.git
-cd vatch-vite
+git clone https://github.com/scenaristeur/vatch-vue.git
+cd vatch-vue
 npm install
 npm run dev
-// explore on http://localhost:3001
+// explore on http://localhost:8080
 ```
 you can change the port of the server at the bottom on the index.js file, but you have to put the same on the client in index.html.
 
@@ -57,11 +60,15 @@ git submodule add -b gh-pages https://github.com/scenaristeur/vatch-vue.git ./pu
 ```
 
   # vatch on Android
-  - install Thermux
-  - in Thermux, run ```apt update && apt upgrade```, ```apt install coreutils nodejs git```
-  - then run the vatch server installation process basic vatch client will be availble at http://localhost:3000 on your mobile
-  - if you want to connect from another device on the local network, grab your phone ip with ```ifconfig```
-  - Want to create a shortcut for vatch ? -> install Thermux:Widget https://wiki.termux.com/wiki/Termux:Widget
+  - install Termux
+  - in Termux, run ```apt update && apt upgrade```, ```apt install coreutils
+  nodejs git```
+  - then run the vatch server installation process basic vatch client
+  will be availble at http://localhost:3000 on your mobile
+  - if you want to connect from another device on the local network,
+   grab your phone ip with ```ifconfig```
+  - Want to create a shortcut for vatch ? ->
+   install Termux:Widget https://wiki.termux.com/wiki/Termux:Widget
   and create vatch.sh in .shortcuts/tasks/
   ```
   mkdir -p /data/data/com.termux/files/home/.shortcuts/tasks

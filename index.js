@@ -1,19 +1,14 @@
+let root = './data'
 // root is the root folder you want to use
 /* '../data' pour sortir de dossier de l'appli, ou
 /* './data' pour le mettre dans l'appli ,
 /* mais bloque parfois le renommage par
 /* l'explorateur quand l'appli est lancée, à voir*/
-let root = './data'
 
-const path = require('path');
-console.log(path.sep)
-if (path.sep === "\\") {
-  console.log("Windows System");
-} else {
-  console.log("Not a Windows System");
-}
 
+const open = require('open');
 const fs = require('fs')
+const path = require('path');
 const express = require('express');
 const app = express();
 const http = require('http');
@@ -24,6 +19,13 @@ const io = require("socket.io")(server, {
     methods: ["GET", "POST"]
   }
 });
+
+console.log(path.sep)
+if (path.sep === "\\") {
+  console.log("Windows System");
+} else {
+  console.log("Not a Windows System");
+}
 
 
 
@@ -77,9 +79,9 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
-app.get('/babylon', (req, res) => {
-  res.sendFile(__dirname + '/public/babylon.html');
-});
+// app.get('/babylon', (req, res) => {
+//   res.sendFile(__dirname + '/public/babylon.html');
+// });
 
 io.on('connection', (socket) => {
   users[socket.id] = {connexion: new Date()}
@@ -166,4 +168,5 @@ async function readFile(f, socket){
 //server.listen(3000, '0.0.0.0', () => {
 server.listen(3000, () => {
   console.log('listening on *:3000');
+  open('http://localhost:3000/vatch-vue');
 });
