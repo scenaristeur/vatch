@@ -23,11 +23,11 @@ class Watcher {
 
 
 
-    watcherChokidar.on('ready', logWatched)
-
-    function logWatched() {
-      console.log("GET WATCHED",  watcherChokidar.getWatched()   )
-    }
+    // watcherChokidar.on('ready', logWatched)
+    //
+    // function logWatched() {
+    //   console.log("GET WATCHED",  watcherChokidar.getWatched()   )
+    // }
 
   }
 
