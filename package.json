@@ -10,9 +10,9 @@
     "socket.io": "^4.0.2"
   },
   "scripts": {
-    "serve": "node . && start http://localhost:3000",
+    "serve": "node .",
     "client:update": "git submodule update --recursive --remote ",
-    "client:get": "git submodule update --init --recursive"
+    "client:install": "git submodule update --init --recursive"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
