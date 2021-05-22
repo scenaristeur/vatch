@@ -1,0 +1,6 @@
+longName "InterPlanetary Graph System"
+developer David
+github https://github.com/scenaristeur/ipgs/
+url https://scenaristeur.github.io/ipgs/
+use http://www.wikidata.org/entity/Q55408718
+use http://www.wikidata.org/entity/Q21422344
