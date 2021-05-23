@@ -4,8 +4,8 @@
       "id": "#Les_Bricodeurs",
       "label": "Les Bricodeurs",
       "color": {
-        "background": "#2ECC70",
-        "border": "#1CA085"
+        "background": "#1FBC9C",
+        "border": "#3D556E"
       },
       "shape": "circle",
       "built": true,
@@ -15,8 +15,8 @@
       "id": "#collectif",
       "label": "collectif de personnes physiques",
       "color": {
-        "background": "#1FBC9C",
-        "border": "#1CA085"
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
       },
       "shape": "ellipse",
       "built": true,
@@ -26,8 +26,8 @@
       "id": "#UneCulture",
       "label": "une culture",
       "color": {
-        "background": "#1FBC9C",
-        "border": "#1CA085"
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
       },
       "shape": "ellipse",
       "built": true,
@@ -37,8 +37,8 @@
       "id": "#DesObjectifsCommuns",
       "label": "des objectifs communs",
       "color": {
-        "background": "#1FBC9C",
-        "border": "#1CA085"
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
       },
       "shape": "ellipse",
       "built": true,
@@ -48,8 +48,8 @@
       "id": "#DesProjets",
       "label": "des projets",
       "color": {
-        "background": "#1FBC9C",
-        "border": "#1CA085"
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
       },
       "shape": "ellipse",
       "built": true,
@@ -59,23 +59,21 @@
       "id": "#Modèles_de_gouvernance_innovants",
       "label": "Modèles de gouvernance innovants",
       "color": {
-        "background": "#1FBC9C",
-        "border": "#1CA085"
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
       },
       "shape": "ellipse",
-      "built": true,
-      "props": []
+      "built": true
     },
     {
       "id": "#Qualité_de_Membre",
       "label": "Qualité de Membre",
       "color": {
         "background": "#D2E5FF",
-        "border": "#E84B3C"
+        "border": "#2B7CE9"
       },
       "shape": "ellipse",
-      "built": true,
-      "props": []
+      "built": true
     },
     {
       "id": "#les_valeurs_et_objectifs_du__manifeste",
@@ -182,34 +180,31 @@
       "id": "#Organes",
       "label": "Organes",
       "color": {
-        "background": "#F2C511",
-        "border": "#F39C19"
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
       },
       "shape": "ellipse",
-      "built": true,
-      "props": []
+      "built": true
     },
     {
       "id": "#CA",
       "label": "CA",
       "color": {
-        "background": "#F2C511",
-        "border": "#F39C19"
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
       },
       "shape": "ellipse",
-      "built": true,
-      "props": []
+      "built": true
     },
     {
       "id": "#Conseil_d'administration",
       "label": "Conseil d'administration",
       "color": {
-        "background": "#F2C511",
-        "border": "#F39C19"
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
       },
       "shape": "ellipse",
-      "built": true,
-      "props": []
+      "built": true
     },
     {
       "id": "#Le_conseil_d'administration_est_l’organe_de_décision_des_bricodeurs._Il_est_composé_du_comité_exécutif_et_du_conseil_stratégique._Le_conseil_d’administration_prend_les_décisions_importantes_de_l’association",
@@ -225,23 +220,21 @@
       "id": "#CS",
       "label": "CS",
       "color": {
-        "background": "#F2C511",
-        "border": "#F39C19"
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
       },
       "shape": "ellipse",
-      "built": true,
-      "props": []
+      "built": true
     },
     {
       "id": "#Conseil_Stratégique",
       "label": "Conseil Stratégique",
       "color": {
-        "background": "#F2C511",
-        "border": "#F39C19"
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
       },
       "shape": "ellipse",
-      "built": true,
-      "props": []
+      "built": true
     },
     {
       "id": "#Le_conseil_stratégique_est_responsable_de_définir_la_vision,_structure_générale_et_politique_éditoriale_de_l’association_et_valide_les_grands_projets",
@@ -309,11 +302,10 @@
       "label": "Personnalités du monde numérique engagé",
       "color": {
         "background": "#D2E5FF",
-        "border": "#E84B3C"
+        "border": "#2B7CE9"
       },
       "shape": "ellipse",
-      "built": true,
-      "props": []
+      "built": true
     },
     {
       "id": "#Parité_H/F",
@@ -353,8 +345,7 @@
         "border": "#2B7CE9"
       },
       "shape": "ellipse",
-      "built": true,
-      "props": []
+      "built": true
     },
     {
       "id": "#Salarié",
@@ -364,269 +355,21 @@
         "border": "#2B7CE9"
       },
       "shape": "ellipse",
-      "built": true,
-      "props": []
+      "built": true
     },
     {
       "id": "#Intervenant",
       "label": "Intervenant",
       "color": {
         "background": "#D2E5FF",
-        "border": "#E84B3C"
+        "border": "#2B7CE9"
       },
       "shape": "ellipse",
-      "built": true,
-      "props": []
+      "built": true
     },
     {
       "id": "#Président",
       "label": "Président",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#E84B3C"
-      },
-      "shape": "ellipse",
-      "built": true,
-      "props": []
-    },
-    {
-      "id": "#CE",
-      "label": "CE",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true,
-      "props": []
-    },
-    {
-      "id": "#Comité_Executif",
-      "label": "Comité Executif",
-      "color": {
-        "background": "#F2C511",
-        "border": "#F39C19"
-      },
-      "shape": "ellipse",
-      "built": true,
-      "props": []
-    },
-    {
-      "id": "#Le_comité_exécutif_est_composé_des_responsables_de_pôles_de_l’association_qui_le_souhaitent._Ses_membres_sont_impliqués_dans_le_fonctionnement_de_l’association",
-      "label": "Le comité exécutif est composé des responsables de pôles de l’association qui le souhaitent. Ses membres sont impliqués dans le fonctionnement de l’association",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#Pôle",
-      "label": "Pôle",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#Rôles",
-      "label": "Rôles",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#Tâches",
-      "label": "Tâches",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#Domaine",
-      "label": "Domaine",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#rôle_et_taches_du_Directeur",
-      "label": "rôle et taches du Directeur",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#priorités_hebdomadaires",
-      "label": "priorités hebdomadaires",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#décisions_budgétaires",
-      "label": "décisions budgétaires",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#QUI?",
-      "label": "QUI?",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true,
-      "props": []
-    },
-    {
-      "id": "#Propositions_de_Grands_Projets",
-      "label": "Propositions de Grands Projets",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#GouvernanceCE",
-      "label": "GouvernanceCE",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#Direct.eur.rice_de_l'asso",
-      "label": "Direct.eur.rice de l'asso",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#Membre_élu_en_son_sein",
-      "label": "Membre élu en son sein",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#Equipe_Salariée",
-      "label": "Equipe Salariée",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true,
-      "props": []
-    },
-    {
-      "id": "#Conduite_des_opérations",
-      "label": "Conduite des opérations",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#Recherches_de_Financements",
-      "label": "Recherches de Financements",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#Directeur_Opérationnel",
-      "label": "Directeur Opérationnel",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true,
-      "props": []
-    },
-    {
-      "id": "#Feuille_de_Route",
-      "label": "Feuille de Route de l'asso",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#Réunion_du_CE",
-      "label": "Réunion du CE",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#Financements",
-      "label": "Financements",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#Responsable_administratif",
-      "label": "Responsable administratif",
-      "color": {
-        "background": "#D2E5FF",
-        "border": "#2B7CE9"
-      },
-      "shape": "ellipse",
-      "built": true
-    },
-    {
-      "id": "#Responsable_des_actions_d'éducation_jeunesse",
-      "label": "Responsable des actions d'éducation jeunesse",
       "color": {
         "background": "#D2E5FF",
         "border": "#2B7CE9"
@@ -857,246 +600,6 @@
       "to": "#CS",
       "label": "ne peut pas voter au",
       "id": "614169e8-9327-426a-a552-8555d8f698ae"
-    },
-    {
-      "from": "#CA",
-      "to": "#CE",
-      "label": "hasPart",
-      "id": "d7d8464d-1cd6-4d53-8c24-a3de61796006"
-    },
-    {
-      "from": "#CE",
-      "to": "#Comité_Executif",
-      "label": "label",
-      "id": "96877fc0-2c42-4cc2-8cf9-8419573bfaa6"
-    },
-    {
-      "from": "#CE",
-      "to": "#Le_comité_exécutif_est_composé_des_responsables_de_pôles_de_l’association_qui_le_souhaitent._Ses_membres_sont_impliqués_dans_le_fonctionnement_de_l’association",
-      "label": "description",
-      "id": "4dde4572-ffeb-4d3e-bc12-1c0464a00206"
-    },
-    {
-      "from": "#CE",
-      "to": "#Pôle",
-      "label": "définit",
-      "id": "f7d02cf0-9c72-4a71-96a6-42959e22dd4a"
-    },
-    {
-      "from": "#CE",
-      "to": "#Rôles",
-      "label": "définit",
-      "id": "0cc492b9-0218-49d2-b6db-4d491236004d"
-    },
-    {
-      "from": "#CE",
-      "to": "#Tâches",
-      "label": "définit",
-      "id": "1fd8a394-c595-44ee-8b7b-4b854c29a081"
-    },
-    {
-      "from": "#Pôle",
-      "to": "#Domaine",
-      "label": "sameAs?",
-      "id": "9205166e-646b-4ed8-96f2-4278bbd0eb4b"
-    },
-    {
-      "from": "#Rôles",
-      "to": "#Salarié",
-      "label": "endosséPar",
-      "id": "8804cecb-a3e8-4165-86aa-7a1b30107165"
-    },
-    {
-      "from": "#Rôles",
-      "to": "#Bénévole",
-      "label": "endosséPar",
-      "id": "bd26b1bd-8338-439c-b22b-9c5177e3d6e7"
-    },
-    {
-      "from": "#Tâches",
-      "to": "#Salarié",
-      "label": "accompliePar",
-      "id": "c24fa91a-55ce-4596-88a3-ae5fb95fb8a9"
-    },
-    {
-      "from": "#Tâches",
-      "to": "#Bénévole",
-      "label": "accompliePar",
-      "id": "81e15330-a04d-4463-8299-565cc2ec0ad8"
-    },
-    {
-      "from": "#CE",
-      "to": "#rôle_et_taches_du_Directeur",
-      "label": "ne définit pas",
-      "id": "3178cd98-e2ed-47f0-8624-62a3f5327b3c"
-    },
-    {
-      "from": "#CE",
-      "to": "#priorités_hebdomadaires",
-      "label": "ne définit pas",
-      "id": "88199b96-2f51-48cb-9701-69bb0d48a1a4"
-    },
-    {
-      "from": "#CE",
-      "to": "#décisions_budgétaires",
-      "label": "ne définit pas",
-      "id": "a7aa36a2-6044-4c9f-b9ec-bade3751600e"
-    },
-    {
-      "from": "#rôle_et_taches_du_Directeur",
-      "to": "#QUI?",
-      "label": "définiPar",
-      "id": "563691fc-51a7-4f80-99a9-e6979e6c0820"
-    },
-    {
-      "from": "#décisions_budgétaires",
-      "to": "#QUI?",
-      "label": "définiPar",
-      "id": "adbf2ca0-095a-4c4f-a89f-6d605385a398"
-    },
-    {
-      "from": "#priorités_hebdomadaires",
-      "to": "#QUI?",
-      "label": "définiPar",
-      "id": "8e5b5f78-2a51-40e5-9d51-58e6f7da97dc"
-    },
-    {
-      "from": "#CE",
-      "to": "#Propositions_de_Grands_Projets",
-      "label": "formule",
-      "id": "cefc843a-d59a-4deb-925d-27b1dc85d0b6"
-    },
-    {
-      "from": "#CE",
-      "to": "#Bénévole",
-      "label": "statut",
-      "id": "1930f2af-bc62-4074-b408-c326d5794a56"
-    },
-    {
-      "from": "#CE",
-      "to": "#GouvernanceCE",
-      "label": "gouvernéPar",
-      "id": "2ae27514-59b0-4410-ac67-006981c1329d"
-    },
-    {
-      "from": "#GouvernanceCE",
-      "to": "#Direct.eur.rice_de_l'asso",
-      "label": "présidéPar",
-      "id": "c43d3aea-1e29-42b0-8856-036cf0eab06b"
-    },
-    {
-      "from": "#GouvernanceCE",
-      "to": "#Membre_élu_en_son_sein",
-      "label": "présidenceAlternative",
-      "id": "a2ffcf48-af48-4e81-a6e9-763559a8eb4d"
-    },
-    {
-      "from": "#Organes",
-      "to": "#Equipe_Salariée",
-      "label": "hasPart",
-      "id": "208ec3e6-22c5-4789-8b25-f9dcfda40150"
-    },
-    {
-      "from": "#Equipe_Salariée",
-      "to": "#Conduite_des_opérations",
-      "label": "responsable de",
-      "id": "8bd23fad-ae4a-49c4-a0f8-47838160ecb3"
-    },
-    {
-      "from": "#Equipe_Salariée",
-      "to": "#DirecteurOperationnel",
-      "label": "hasPart",
-      "id": "f5fe529e-cfc0-488c-873d-cdddaad97742"
-    },
-    {
-      "from": "#Equipe_Salariée",
-      "to": "#Salarié",
-      "label": "hasPart",
-      "id": "76728a82-828a-401a-8e56-f2f2c3597a5e"
-    },
-    {
-      "from": "#Directeur_Operationnel",
-      "to": "#Recherches_de_Financements",
-      "label": "établit",
-      "id": "5a108061-4e36-4929-a647-cda1adddb64a"
-    },
-    {
-      "from": "#Directeur_Opérationnel",
-      "to": "#Salarié",
-      "label": "encadreMoralement",
-      "id": "c54e245c-dc65-4c8f-a1b0-566d036af8e4"
-    },
-    {
-      "from": "#Directeur_Opérationnel",
-      "to": "#Salarié",
-      "label": "encadreComptablement",
-      "id": "55ba1024-1e7f-46f5-afa8-79f41ae68f0b"
-    },
-    {
-      "from": "#Directeur_Opérationnel",
-      "to": "#Salarié",
-      "label": "encadreSocialement",
-      "id": "8e37f001-952b-46bf-b829-a6c6ab4507de"
-    },
-    {
-      "from": "#Equipe_Salariée",
-      "to": "#Directeur_Opérationnel",
-      "label": "hasPart",
-      "id": "53c2c253-1d70-4249-a7d8-a06554f66aae"
-    },
-    {
-      "from": "#Directeur_Opérationnel",
-      "to": "#Feuille_de_Route",
-      "label": "metEnOeuvre",
-      "id": "c927a771-6375-4d9a-85ce-b8b1f3cbf60b"
-    },
-    {
-      "from": "#Directeur_Opérationnel",
-      "to": "#Réunion_du_CE",
-      "label": "organise",
-      "id": "12ab3256-6732-4fd0-bbe4-ade408530067"
-    },
-    {
-      "from": "#Directeur_Opérationnel",
-      "to": "#Réunion_du_CE",
-      "label": "anime",
-      "id": "81194760-ea1d-413c-82d3-7594ae55ef1a"
-    },
-    {
-      "from": "#Réunion_du_CE",
-      "to": "#CE",
-      "label": "réunit",
-      "id": "94a7b545-ac41-4640-8d60-67424a88aab9"
-    },
-    {
-      "from": "#Directeur_Opérationnel",
-      "to": "#Financements",
-      "label": "recherche",
-      "id": "d083b521-1c9b-43d3-ade4-d9466eefa724"
-    },
-    {
-      "from": "#Directeur_Opérationnel",
-      "to": "#Responsable_administratif",
-      "label": "endosse",
-      "id": "3f811a64-b228-46ba-8348-c2cd5eab0ad0"
-    },
-    {
-      "from": "#Directeur_Opérationnel",
-      "to": "#Responsable_des_actions_d'éducation_jeunesse",
-      "label": "endosse",
-      "id": "484d3ac1-ef64-4b78-b0bd-f6bad38b9e86"
-    },
-    {
-      "from": "#Responsable_administratif",
-      "to": "#QUI?",
-      "label": "àRéaffecter?",
-      "id": "0baca54e-a12c-466d-b34a-98bfb34ac02e"
-    },
-    {
-      "from": "#Responsable_des_actions_d'éducation_jeunesse",
-      "to": "#QUI?",
-      "label": "àRéaffecter?",
-      "id": "4bda8f14-e6ef-4c79-b622-6f7be454b0a2"
     }
   ]
 }
