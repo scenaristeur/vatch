@@ -1,0 +1,40 @@
+{
+  "nodes": [
+    {
+      "id": "http://www.wikidata.org/entity/Q5482740",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    },
+    {
+      "id": "http://www.wikidata.org/entity/Q299088",
+      "label": "cool",
+      "color": {
+        "background": "#D2E5FF",
+        "border": "#2B7CE9"
+      },
+      "shape": "ellipse",
+      "built": true
+    }
+  ],
+  "edges": [
+    {
+      "from": "data/Entity/Person/David",
+      "to": "#Person",
+      "label": "a"
+    },
+    {
+      "from": "#data/Entity/Person/David",
+      "to": "http://www.wikidata.org/entity/Q5482740",
+      "label": "a"
+    },
+    {
+      "from": "data/Entity/Person/David",
+      "to": "http://www.wikidata.org/entity/Q299088",
+      "label": "is"
+    }
+  ]
+}

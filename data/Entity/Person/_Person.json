@@ -1,0 +1,19 @@
+{
+  "nodes": [
+    {"id": "data/Entity/Person"},
+    {"id": "data/Entity/Role"},
+    {"id": "#Person"}
+  ],
+"edges": [
+    {
+      "from": "data/Entity/Person",
+      "to": "#Person",
+      "label": "sameAs"
+    },
+    {
+      "from": "data/Entity/Person",
+      "to": "data/Entity/Role",
+      "label": "adopt"
+    }
+  ]
+}

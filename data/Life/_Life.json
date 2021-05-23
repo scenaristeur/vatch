@@ -1,0 +1,14 @@
+{
+"edges": [
+    {
+      "from": "data/Life/Past-Events",
+      "to": "data/Life/Present-State",
+      "label": "next"
+    },
+    {
+      "from": "data/Life/Present-State",
+      "to": "data/Life/Futur-Objectives",
+      "label": "next"
+    }
+  ]
+}

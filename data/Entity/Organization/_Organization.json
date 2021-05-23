@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {"id": "data/Entity/Organization"},
+    {"id": "data/Entity/Role"}
+  ],
+"edges": [
+    {
+      "from": "data/Entity/Organization",
+      "to": "data/Entity/Role",
+      "label": "hasPart"
+    }
+  ]
+}

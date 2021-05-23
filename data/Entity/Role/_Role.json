@@ -1,0 +1,13 @@
+{
+  "nodes": [
+    {"id": "data/Entity/Role"},
+    {"id": "data/Entity/Task"}
+  ],
+"edges": [
+    {
+      "from": "data/Entity/Role",
+      "to": "data/Entity/Task",
+      "label": "process"
+    }
+  ]
+}
