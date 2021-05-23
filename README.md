@@ -1,37 +1,31 @@
-# Vatcher is vatching U
+# Vatch is vatching U
 
 the new file/graph explorer generation
 
-- vatcher is a server that listen for change in your system through chokidar and send it through socket.io to the client
+- vatch is a server that listen for change in your system through chokidar and send it through socket.io to the client
 
-
-- to open the browser, use ````npm run serve ``` instead of ``` node .```
-
-- ! the last line ```  open('http://localhost:3000');``` is can be detected as suspicios by Avast Antivirus but it is just a shortcut to open the browser in the same time as the server, but if you prefer, you can remove/comment  it
-
-
-# vatcher parts
+# vatch parts
 - vatch server : https://github.com/scenaristeur/vatch
-- vatch-vite : a Vuejs client app for vatch server : https://github.com/scenaristeur/vatch-vite
+- vatch-vue : a Vuejs client app for vatch server : https://github.com/scenaristeur/vatch-vue
 
 First launch the server on port 3000
 
-To install the server :
+- prerequis : (nodejs)[https://nodejs.org/en/]
+
+- install the server :
 ```
-git clone https://github.com/scenaristeur/vatch.git
-cd vatch
-npm install
-git submodule update --init --recursive
-// or git submodule update --recursive --remote for later updates
-npm install
-node .
+git clone https://github.com/scenaristeur/vatch.git // clone the repo
+cd vatch // move to the folder
+npm install // install node_modules
+npm run client:install // install the client on the first time
+// or 'npm run client:update' to update the client the next time you run the server
+node . //run the server
 // explore on http://localhost:3000
 ```
 
 The client is managed as a submodule in another repository :
 
-
-To customize / install the client :
+To customize / contribute to the client :
 ```
 git clone https://github.com/scenaristeur/vatch-vue.git
 cd vatch-vue
@@ -39,19 +33,23 @@ npm install
 npm run dev
 // explore on http://localhost:8080
 ```
-you can change the port of the server at the bottom on the index.js file, but you have to put the same on the client in index.html.
 
-index.js on vatch
+- ! the last line ```  open('http://localhost:3000'); ``` in index.js can be detected as suspicious by Avast Antivirus but it's just a shortcut to open the browser in the same time as the server, if you prefer, you can remove or comment it
+
+- you can change the port of the server at the bottom on the index.js file, but you have to put the same on the client in index.html.
+
+on index.js on vatch
 ```
 server.listen(3000, () => { // ok for local network on linux
   console.log('listening on *:3000');
   });
-  ```
+```
 
-  index.html on vatch-vite
+on index.html on vatch-vite
   ```
   var socket = io(':3000');
   ```
+_______________________________________________________________________
 
 # submodule
 
@@ -60,16 +58,16 @@ git submodule add -b gh-pages https://github.com/scenaristeur/vatch-vue.git ./pu
 ```
 
   # vatch on Android
-  - install Termux
+  - install Termux (from https://wiki.termux.com/wiki/Main_Page from f-Droid as it seems there are some issue with GooglePlay)
   - in Termux, run ```apt update && apt upgrade```, ```apt install coreutils
   nodejs git```
-  - then run the vatch server installation process basic vatch client
-  will be availble at http://localhost:3000 on your mobile
+  - then run the vatch server installation process.
+client must will be availble at http://localhost:3000 on your mobile
   - if you want to connect from another device on the local network,
    grab your phone ip with ```ifconfig```
   - Want to create a shortcut for vatch ? ->
    install Termux:Widget https://wiki.termux.com/wiki/Termux:Widget
-  and create vatch.sh in .shortcuts/tasks/
+  and    use termux-shortcuts.sh or create vatch.sh in .shortcuts/tasks/
   ```
   mkdir -p /data/data/com.termux/files/home/.shortcuts/tasks
   nano /data/data/com.termux/files/home/.shortcuts/tasks/vatch.sh
