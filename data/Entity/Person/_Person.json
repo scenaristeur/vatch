@@ -1,9 +1,4 @@
 {
-  "nodes": [
-    {"id": "data/Entity/Person"},
-    {"id": "data/Entity/Role"},
-    {"id": "#Person"}
-  ],
 "edges": [
     {
       "from": "data/Entity/Person",
@@ -14,6 +9,11 @@
       "from": "data/Entity/Person",
       "to": "data/Entity/Role",
       "label": "adopt"
+    },
+    {
+      "from": "data/Entity/Person/Samuel",
+      "to": "data/Entity/Role/Animateur",
+      "label": "maitrise"
     }
   ]
 }

@@ -1,0 +1,14 @@
+{
+"edges": [
+    {
+      "from": "data/Entity/Resource/Formation",
+      "to": "#ImmaterialObject",
+      "label": "a"
+    },
+    {
+      "from": "data/Entity/Resource/Atelier",
+      "to": "#ImmaterialObject",
+      "label": "a"
+      }
+  ]
+}

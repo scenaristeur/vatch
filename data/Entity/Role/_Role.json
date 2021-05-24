@@ -1,13 +1,29 @@
 {
-  "nodes": [
-    {"id": "data/Entity/Role"},
-    {"id": "data/Entity/Task"}
-  ],
 "edges": [
     {
       "from": "data/Entity/Role",
       "to": "data/Entity/Task",
       "label": "process"
+    },
+    {
+      "from": "data/Entity/Role/Formateur",
+      "to": "data/Entity/Resource/Formation",
+      "label": "anime"
+    },
+    {
+      "from": "data/Entity/Role/Animateur",
+      "to": "data/Entity/Resource/Atelier",
+      "label": "anime"
+    },
+    {
+      "from": "data/Entity/Role/ResponsableNumerique",
+      "to": "data/Entity/Resource/Atelier",
+      "label": "organise"
+    },
+    {
+      "from": "data/Entity/Role/ResponsableNumerique",
+      "to": "data/Entity/Resource/Formation",
+      "label": "organise"
     }
   ]
 }

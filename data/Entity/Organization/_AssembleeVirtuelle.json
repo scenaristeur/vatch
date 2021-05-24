@@ -1,0 +1,9 @@
+{
+"edges": [
+    {
+      "from": "data/Entity/Organization/AssembleeVirtuelle",
+      "to": "data/Entity/Person/Guillaume",
+      "label": "president"
+      }
+  ]
+}

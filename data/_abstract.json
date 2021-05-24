@@ -4,8 +4,8 @@
       "id": "#Univers",
       "label": "Universe",
       "color": {
-        "background": "#1FBC9C",
-        "border": "#2B7CE9"
+        "background": "#2B7CE9",
+        "border": "#1FBC9C"
       },
       "group": "abstract",
       "shape": "circle",
@@ -15,7 +15,7 @@
       "id": "#Galaxy",
       "label": "Galaxy",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -26,7 +26,7 @@
       "id": "#Planetary_System",
       "label": "Planetary System",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -37,7 +37,7 @@
       "id": "#Planet",
       "label": "Planet",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -48,7 +48,7 @@
       "id": "#Continent",
       "label": "Continent",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -59,7 +59,7 @@
       "id": "#Country",
       "label": "Country",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -70,7 +70,7 @@
       "id": "#Region",
       "label": "Region",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -81,7 +81,7 @@
       "id": "#Departement",
       "label": "Departement",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -92,7 +92,7 @@
       "id": "#Agglomeration",
       "label": "Agglomeration",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -103,7 +103,7 @@
       "id": "#Arrondissement",
       "label": "Arrondissement",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -114,7 +114,7 @@
       "id": "#Quartier",
       "label": "Quartier",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -125,7 +125,7 @@
       "id": "#Paté_/_Lotissement",
       "label": "Paté / Lotissement",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -136,7 +136,7 @@
       "id": "#Residence",
       "label": "Residence",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -147,7 +147,7 @@
       "id": "#Immeuble",
       "label": "Immeuble",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -158,7 +158,7 @@
       "id": "#Etage",
       "label": "Etage",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -169,7 +169,7 @@
       "id": "#Appartment",
       "label": "Appartment",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -180,7 +180,7 @@
       "id": "#Piece",
       "label": "Piece",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -191,7 +191,7 @@
       "id": "#Person",
       "label": "Person",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -202,7 +202,7 @@
       "id": "#Object",
       "label": "Object",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -213,7 +213,7 @@
       "id": "#Material",
       "label": "Material",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -224,7 +224,7 @@
       "id": "#Molecule",
       "label": "Molecule",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -235,7 +235,7 @@
       "id": "#Atom",
       "label": "Atom",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -246,7 +246,7 @@
       "id": "#Proton",
       "label": "Proton",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -257,7 +257,7 @@
       "id": "#Quark",
       "label": "Quark",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -268,7 +268,7 @@
       "id": "#Neutron",
       "label": "Neutron",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -279,7 +279,7 @@
       "id": "#Electron",
       "label": "Electron",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -290,7 +290,7 @@
       "id": "#MaterialObject",
       "label": "MaterialObject",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -301,7 +301,7 @@
       "id": "#ImmaterialObject",
       "label": "ImmaterialObject",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",
@@ -312,7 +312,7 @@
       "id": "#Software",
       "label": "Software",
       "color": {
-        "background": "#D2E5FF",
+        "background": "#1FBC9C",
         "border": "#2B7CE9"
       },
       "group": "abstract",

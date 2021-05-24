@@ -2,6 +2,7 @@
   "nodes": [
     {
       "id": "http://www.wikidata.org/entity/Q5482740",
+      "label": "programmer",
       "color": {
         "background": "#D2E5FF",
         "border": "#2B7CE9"
@@ -22,11 +23,6 @@
   ],
   "edges": [
     {
-      "from": "data/Entity/Person/David",
-      "to": "#Person",
-      "label": "a"
-    },
-    {
       "from": "#data/Entity/Person/David",
       "to": "http://www.wikidata.org/entity/Q5482740",
       "label": "a"
@@ -35,6 +31,12 @@
       "from": "data/Entity/Person/David",
       "to": "http://www.wikidata.org/entity/Q299088",
       "label": "is"
+    },
+    {
+      "from": "data/Entity/Person/David",
+      "to": "data/Entity/Role/Animateur",
+      "label": "debute"
     }
+
   ]
 }

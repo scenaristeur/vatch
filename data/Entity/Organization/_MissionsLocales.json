@@ -1,0 +1,9 @@
+{
+"edges": [
+    {
+      "from": "data/Entity/Organization/MissionsLocales",
+      "to": "data/Entity/Person/Coralie",
+      "label": "responsableNumerique"
+      }
+  ]
+}

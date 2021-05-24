@@ -1,7 +1,7 @@
 {
   "nodes": [
     {
-      "id": "#Les_Bricodeurs",
+      "id": "data/Entity/Organization/Bricodeurs",
       "label": "Les Bricodeurs",
       "color": {
         "background": "#1FBC9C",
@@ -380,37 +380,37 @@
   ],
   "edges": [
     {
-      "from": "#Les_Bricodeurs",
+      "from": "data/Entity/Organization/Bricodeurs",
       "to": "#collectif",
       "label": "type",
       "id": "b29f7be4-6cab-4eb7-ab08-1ecbab528dcd"
     },
     {
-      "from": "#Les_Bricodeurs",
+      "from": "data/Entity/Organization/Bricodeurs",
       "to": "#UneCulture",
       "label": "definiPar",
       "id": "bdafcc9f-e5ed-4ab5-8eae-2929162136af"
     },
     {
-      "from": "#Les_Bricodeurs",
+      "from": "data/Entity/Organization/Bricodeurs",
       "to": "#DesObjectifsCommuns",
       "label": "definiPar",
       "id": "c3b1ab84-a47e-4c5b-ac28-14cb8cfc2c92"
     },
     {
-      "from": "#Les_Bricodeurs",
+      "from": "data/Entity/Organization/Bricodeurs",
       "to": "#DesProjets",
       "label": "definiPar",
       "id": "72f73316-963c-4f99-b7b9-eb9c38b026be"
     },
     {
-      "from": "#Les_Bricodeurs",
+      "from": "data/Entity/Organization/Bricodeurs",
       "to": "#Modèles_de_gouvernance_innovants",
       "label": "inspiréPar",
       "id": "3b028f5e-32a7-4ed6-9efa-32e9adf86f0f"
     },
     {
-      "from": "#Les_Bricodeurs",
+      "from": "data/Entity/Organization/Bricodeurs",
       "to": "#Qualité_de_Membre",
       "label": "adhésion",
       "id": "a2622daa-73d1-49a6-9df0-5eb104cc4f54"
@@ -476,7 +476,7 @@
       "id": "e61f1ec5-7261-4821-afb1-3e6f501f2309"
     },
     {
-      "from": "#Les_Bricodeurs",
+      "from": "data/Entity/Organization/Bricodeurs",
       "to": "#Organes",
       "label": "hasPart",
       "id": "e0d6080e-0918-4086-87a2-fa25c62b731d"
@@ -600,6 +600,42 @@
       "to": "#CS",
       "label": "ne peut pas voter au",
       "id": "614169e8-9327-426a-a552-8555d8f698ae"
-    }
+    },
+{
+ "from": "data/Entity/Organization/Bricodeurs",
+ "to": "data/Entity/Person/Xavier",
+"label": "president"
+},
+{
+ "from": "data/Entity/Organization/Bricodeurs",
+ "to": "data/Entity/Person/Samuel",
+"label": "tresorier"
+},
+{
+ "from": "data/Entity/Organization/Bricodeurs",
+ "to": "data/Entity/Person/David",
+"label": "animateur"
+},
+{
+ "from": "data/Entity/Organization/Bricodeurs",
+ "to": "data/Entity/Person/Antoine",
+"label": "animateur"
+},
+{
+ "from": "data/Entity/Organization/Bricodeurs",
+ "to": "data/Entity/Person/Sylvain",
+"label": "animateur"
+},
+{
+ "from": "data/Entity/Organization/Bricodeurs",
+ "to": "data/Entity/Person/Samuel",
+"label": "animateur"
+},
+{
+ "from": "data/Entity/Organization/Bricodeurs",
+ "to": "data/Entity/Person/Xavier",
+"label": "animateur"
+}
+
   ]
 }
