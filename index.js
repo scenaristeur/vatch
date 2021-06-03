@@ -34,8 +34,8 @@ if (path.sep === "\\") {
 //var fs = require('fs');
 //var path = require('path');
 
-// let storage = {root: root, folders: [], files: []}
-//
+let storage = {root: root, folders: [], files: []}
+
 // var walk = function(dir, done) {
 //   var results = [];
 //   fs.readdir(dir, function(err, list) {
@@ -59,18 +59,17 @@ if (path.sep === "\\") {
 //     })();
 //   });
 // };
-//
-//
-// walk(root, function(err, results) {
-//   if (err) throw err;
-//   console.log(results);
-// });
+
+
+
 
 
 
 // const io = new Server(server);
 const Watcher = require('./modules/watcher')
 let watcher = new Watcher(io, root)
+const Walker = require('./modules/walker')
+let walker = new Walker(io, root)
 const FileType = require('file-type');
 
 let users = {}
@@ -89,7 +88,11 @@ io.on('connection', (socket) => {
   console.log(users_nb+" users",users)
   socket.broadcast.emit('chat message', 'A new user '+users_nb); //envoyer à tous les autres
   io.emit('users', users); //envoyer à tous
-  socket.emit('init', {pathsep: path.sep, welcome: "hi", users: users_nb}); //envoyer au nouveau
+  walker.start(root, function(err, results) {
+    if (err) throw err;
+    console.log(results);
+    socket.emit('init', {pathsep: path.sep, welcome: "hi", users: users_nb, folder: results}); //envoyer au nouveau
+  });
   socket.emit('watcher event', watcher.paths)
   socket.on('chat message', (msg) => {
     io.emit('chat message', msg); //envoyer à tout le monde
@@ -181,5 +184,5 @@ server.listen(3000, () => {
   console.log('server running at localhost:3000');
   console.log('1. First time client install: `npm run client:install`')
   console.log('2. later client update: `npm run client:update`');
-   open('http://localhost:3000/vatch-vue');
+//  open('http://localhost:3000/vatch-vue');
 });

@@ -1,4 +1,3 @@
-
 const fs = require('fs')
 const chokidar = require('chokidar')
 const path = require('path');
