@@ -1,7 +1,7 @@
 {
   "nodes": [
-    {"id": "data/Entity/Organization"},
-    {"id": "data/Entity/Role"}
+    {"id": "data/Entity/Organization", "label":"Organization"},
+    {"id": "data/Entity/Role", "label": "Role"}
   ],
 "edges": [
     {
