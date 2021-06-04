@@ -12,6 +12,7 @@ let context =  {
   "dateTime": "http://www.w3.org/2001/XMLSchema#dateTime",
   "iana": "http://www.w3.org/ns/iana/media-types/",
   "solid": "http://www.w3.org/ns/solid/terms#",
+  "label": "http://www.w3.org/1999/02/22-rdf-syntax-ns#label",
   "stat": "http://www.w3.org/ns/posix/stat#",
   //"@base": "https://bricodeurs.solidweb.org/"
 }
@@ -28,7 +29,7 @@ class Walker {
     let walker = this
     this.walk(dir, function(err, results) {
       if (err) throw err;
-      console.log(results);
+      //  console.log(results);
       walker.jsonld["@context"]["@base"] = path.resolve(dir)
       walker.jsonld["@graph"] = results
       done(null, walker.jsonld)
@@ -37,9 +38,9 @@ class Walker {
 
   ldp_contains(list,dir){
     let contained = list.map(function(x){
-      return {"@id": path.resolve(dir,x)}
+      return {"@id": path.resolve(dir,x), "label": x }
     })
-    console.log(contained)
+    //  console.log(contained)
     return contained
   }
   //https://www.iana.org/assignments/media-types/media-types.xhtml
@@ -49,7 +50,7 @@ class Walker {
     fs.readdir(dir, function(err, list) {
       if (err) return done(err);
       fs.stat(dir, function(err, stat) {
-        let n = {"@id": dir, "@type": [
+        let n = {"@id": dir, "label": dir, "@type": [
           "ldp:BasicContainer",
           "ldp:Container"
         ],
@@ -61,6 +62,7 @@ class Walker {
       (function next() {
         var file = list[i++];
         if (!file) return done(null, results);
+        let label = file
         file = path.resolve(dir, file);
 
         fs.stat(file, function(err, stat) {
@@ -70,7 +72,7 @@ class Walker {
               next();
             });
           } else {
-            let n = {"@id": file,"@type": [
+            let n = {"@id": file, "label": label, "@type": [
               "ldp:Resource"
             ]}
             walker.props(n,stat)
