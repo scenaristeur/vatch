@@ -13,6 +13,7 @@ const io = require("socket.io")(server, {
   }
 });
 
+
 // custom classes
 const Agent = require('./modules/agent');
 const Acteur = require('./modules/acteur');
@@ -26,12 +27,12 @@ const Source = require('./modules/source');
 const t = require ('./modules/tools')
 
 // Generic vars
-const default_root = '~/holaData'
+const default_root = 'holaData'
 
 console.log('args: ', args);
 args.root != undefined ? console.log("Using Data Folder ",args.root) : console.log ("Using '"+default_root+"', you can customize your root folder with 'node . --root=path/to/your/root/folder'")
-let local_storage = {root: args.root || default_root, folders: [], files: []}
-console.log("local_storage ", local_storage)
+let storage = {root: args.root || default_root, folders: [], files: []}
+console.log("storage ", storage)
 
 console.log(path.sep)
 if (path.sep === "\\") {
@@ -43,11 +44,6 @@ if (path.sep === "\\") {
 
 let d = t.date()
 console.log("date debut", d)
-
-
-
-
-
 
 
 
@@ -112,6 +108,133 @@ async function main() {
 }
 
 main();
+
+
+
+// const io = new Server(server);
+const Watcher = require('./modules/watcher')
+let watcher = new Watcher(io, storage)
+const Walker = require('./modules/walker')
+let walker = new Walker(io, storage)
+const FileType = import('file-type');
+
+let users = {}
+
+app.use(express.static('public'));
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
+});
+// app.get('/babylon', (req, res) => {
+//   res.sendFile(__dirname + '/public/babylon.html');
+// });
+
+io.on('connection', (socket) => {
+  users[socket.id] = {connexion: new Date()}
+  let users_nb = Object.keys(users).length
+  console.log(users_nb+" users",users)
+  socket.broadcast.emit('chat message', 'A new user '+users_nb); //envoyer à tous les autres
+  io.emit('users', users); //envoyer à tous
+  walker.start(storage.root, function(err, results) {
+    if (err) throw err;
+    console.log(results);
+    socket.emit('init', {pathsep: path.sep, welcome: "hi", users: users_nb, folder: results}); //envoyer au nouveau
+  });
+  socket.emit('watcher event', watcher.paths)
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg); //envoyer à tout le monde
+    if(msg.startsWith('data')){
+      //  console.log(msg)
+      if (msg.endsWith(path.sep)){
+        try {
+          if (!fs.existsSync(msg)) {
+            fs.mkdirSync(msg)
+          }
+        } catch (err) {
+          console.error(err)
+        }
+      }else{
+        try {
+          if (!fs.existsSync(msg)) {
+            fs.writeFile(msg, "", (err) => {
+              if (err) throw err;
+              console.log("The blank file was succesfully saved!");
+            });
+          }
+        } catch (err) {
+          console.error(err)
+        }
+      }
+    }
+  });
+
+  socket.on('write file', (msg) => {
+    io.emit('chat message', msg.path); //envoyer à tout le monde
+    if(msg.path.startsWith('data')){
+      fs.writeFile(msg.path, msg.content, (err) => {
+        if (err) throw err;
+        console.log("The file was succesfully saved!");
+      });
+    }
+  });
+  socket.on('read file', (params) => {
+    readFile(params, socket)
+  });
+
+  socket.on('disconnect', () => {
+    delete users[socket.id]
+    io.emit('users', users);
+    console.log('user disconnected');
+  });
+});
+
+async function readFile(params, socket){
+  let f = params.path
+  if (f== undefined){
+    console.log("oho there is no params.path", params)
+    return
+  }
+  let type = await FileType.fromFile('.'+path.sep+f)
+  type != undefined ? console.log("mime type",type) : ""
+  //image loading
+  if(type != undefined && type.mime != undefined && type.mime.split('/')[0] == 'image'){
+    fs.readFile(f, /*{encoding: 'base64'},*/ function (err,data) {
+      if (err) {
+        console.log('error', err)
+        params.error = err
+        socket.emit('cat file', params);
+      }
+      params.content = data.toString('base64')
+      params.type = type
+      socket.emit('cat file', params);
+      console.log('image file is initialized');
+    });
+  }
+  else{
+    fs.readFile(f, 'utf8', function (err,data) {
+      if (err) {
+        console.log('error', err)
+        params.error = err
+        socket.emit('cat file', params);
+      }
+      params.content = data
+      params.type = type
+      socket.emit('cat file', params);
+    });
+  }
+
+
+}
+
+
+
+
+//server.listen(3000, '0.0.0.0', () => {
+server.listen(3000, () => {
+  console.log('server running at localhost:3000');
+  console.log('1. First time client install: `npm run client:install`')
+  console.log('2. later client update: `npm run client:update`');
+//  open('http://localhost:3000/vatch-vue');
+});
 
 
 

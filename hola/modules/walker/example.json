@@ -1,0 +1,248 @@
+{
+  "@context": {
+    "ldp": "http://www.w3.org/ns/ldp#",
+    "xml": "https://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "decimal": "http://www.w3.org/2001/XMLSchema#decimal",
+    "integer": "http://www.w3.org/2001/XMLSchema#integer",
+    "dateTime": "http://www.w3.org/2001/XMLSchema#dateTime",
+    "iana": "http://www.w3.org/ns/iana/media-types/",
+    "solid": "http://www.w3.org/ns/solid/terms#",
+    "stat": "http://www.w3.org/ns/posix/stat#",
+    "@base": "https://bricodeurs.solidweb.org/"
+  },
+  "@graph": [
+    {
+      "@id": "./",
+      "@type": [
+        "ldp:BasicContainer",
+        "ldp:Container"
+      ],
+      "dcterms:modified": {
+        "@type": "dateTime",
+        "@value": "2021-05-27T20:51:44Z"
+      },
+      "ldp:contains": [
+        {
+          "@id": ".well-known/"
+        },
+        {
+          "@id": "bookmarks/"
+        },
+        {
+          "@id": "favicon.ico"
+        },
+        {
+          "@id": "inbox/"
+        },
+        {
+          "@id": "private/"
+        },
+        {
+          "@id": "profile/"
+        },
+        {
+          "@id": "public/"
+        },
+        {
+          "@id": "robots.txt"
+        },
+        {
+          "@id": "settings/"
+        }
+      ],
+      "stat:mtime": {
+        "@type": "decimal",
+        "@value": "1622148704.155"
+      },
+      "stat:size": {
+        "@type": "integer",
+        "@value": "4096"
+      }
+    },
+    {
+      "@id": ".well-known/",
+      "@type": [
+        "ldp:BasicContainer",
+        "ldp:Container",
+        "ldp:Resource"
+      ],
+      "dcterms:modified": {
+        "@type": "dateTime",
+        "@value": "2021-05-27T17:18:42Z"
+      },
+      "stat:mtime": {
+        "@type": "decimal",
+        "@value": "1622135922.564"
+      },
+      "stat:size": {
+        "@type": "integer",
+        "@value": "4096"
+      }
+    },
+    {
+      "@id": "bookmarks/",
+      "@type": [
+        "ldp:BasicContainer",
+        "ldp:Container",
+        "ldp:Resource"
+      ],
+      "dcterms:modified": {
+        "@type": "dateTime",
+        "@value": "2021-05-27T20:51:44Z"
+      },
+      "stat:mtime": {
+        "@type": "decimal",
+        "@value": "1622148704.156"
+      },
+      "stat:size": {
+        "@type": "integer",
+        "@value": "4096"
+      }
+    },
+    {
+      "@id": "favicon.ico",
+      "@type": [
+        "iana:image/vnd.microsoft.icon#Resource",
+        "ldp:Resource"
+      ],
+      "dcterms:modified": {
+        "@type": "dateTime",
+        "@value": "2021-05-27T17:18:42Z"
+      },
+      "stat:mtime": {
+        "@type": "decimal",
+        "@value": "1622135922.563"
+      },
+      "stat:size": {
+        "@type": "integer",
+        "@value": "4286"
+      }
+    },
+    {
+      "@id": "inbox/",
+      "@type": [
+        "ldp:BasicContainer",
+        "ldp:Container",
+        "ldp:Resource"
+      ],
+      "dcterms:modified": {
+        "@type": "dateTime",
+        "@value": "2021-05-27T17:18:42Z"
+      },
+      "stat:mtime": {
+        "@type": "decimal",
+        "@value": "1622135922.562"
+      },
+      "stat:size": {
+        "@type": "integer",
+        "@value": "4096"
+      }
+    },
+    {
+      "@id": "private/",
+      "@type": [
+        "ldp:BasicContainer",
+        "ldp:Container",
+        "ldp:Resource"
+      ],
+      "dcterms:modified": {
+        "@type": "dateTime",
+        "@value": "2021-05-27T17:18:42Z"
+      },
+      "stat:mtime": {
+        "@type": "decimal",
+        "@value": "1622135922.561"
+      },
+      "stat:size": {
+        "@type": "integer",
+        "@value": "4096"
+      }
+    },
+    {
+      "@id": "profile/",
+      "@type": [
+        "ldp:BasicContainer",
+        "ldp:Container",
+        "ldp:Resource"
+      ],
+      "dcterms:modified": {
+        "@type": "dateTime",
+        "@value": "2021-05-27T17:18:42Z"
+      },
+      "stat:mtime": {
+        "@type": "decimal",
+        "@value": "1622135922.561"
+      },
+      "stat:size": {
+        "@type": "integer",
+        "@value": "4096"
+      }
+    },
+    {
+      "@id": "profile/card#me",
+      "solid:account": {
+        "@id": "./"
+      }
+    },
+    {
+      "@id": "public/",
+      "@type": [
+        "ldp:BasicContainer",
+        "ldp:Container",
+        "ldp:Resource"
+      ],
+      "dcterms:modified": {
+        "@type": "dateTime",
+        "@value": "2021-05-27T21:57:35Z"
+      },
+      "stat:mtime": {
+        "@type": "decimal",
+        "@value": "1622152655.277"
+      },
+      "stat:size": {
+        "@type": "integer",
+        "@value": "4096"
+      }
+    },
+    {
+      "@id": "robots.txt",
+      "@type": [
+        "iana:text/plain#Resource",
+        "ldp:Resource"
+      ],
+      "dcterms:modified": {
+        "@type": "dateTime",
+        "@value": "2021-05-27T17:18:42Z"
+      },
+      "stat:mtime": {
+        "@type": "decimal",
+        "@value": "1622135922.559"
+      },
+      "stat:size": {
+        "@type": "integer",
+        "@value": "83"
+      }
+    },
+    {
+      "@id": "settings/",
+      "@type": [
+        "ldp:BasicContainer",
+        "ldp:Container",
+        "ldp:Resource"
+      ],
+      "dcterms:modified": {
+        "@type": "dateTime",
+        "@value": "2021-05-27T17:18:42Z"
+      },
+      "stat:mtime": {
+        "@type": "decimal",
+        "@value": "1622135922.557"
+      },
+      "stat:size": {
+        "@type": "integer",
+        "@value": "4096"
+      }
+    }
+  ]
+}

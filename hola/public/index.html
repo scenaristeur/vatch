@@ -1,0 +1,25 @@
+<head>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+   const socket = io("http://localhost:3000");
+   console.log(socket)
+socket.on("*", (ev) => {
+console.log(ev)});
+
+
+socket.on("users", (data) => {  console.log(data);});
+socket.on("init", (data) => {  console.log(data);});
+socket.on("watcher event", (data) => {  console.log(data);});
+socket.on("cat file", (data) => {  console.log(data);});
+socket.on("chat message", (data) => {  console.log(data);});
+
+
+
+ </script>
+
+</head>
+
+<body>
+
+  client
+</body>
