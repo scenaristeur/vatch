@@ -1,0 +1,22 @@
+{
+  "name": "hola",
+  "version": "1.0.0",
+  "description": "- https://stackoverflow.com/questions/42684177/node-js-es6-classes-with-require",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chokidar": "^3.5.2",
+    "express": "^4.17.1",
+    "file-type": "^17.0.0",
+    "open": "^8.4.0",
+    "path": "^0.12.7",
+    "socket.io": "^4.4.0",
+    "yargs": "^17.3.0"
+  }
+}
