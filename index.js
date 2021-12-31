@@ -39,13 +39,13 @@ const Thing = require('./modules/thing')
 // presque un package.json
 let config = {
   "ve:name": "Smag",
-  type : ["server"], //pas de ve car type jsonld  /activityStreams ? 
+  type : ["server"], //pas de ve car type jsonld  /activityStreams ?
   "ve:description": "This is the main worker of a vatch system",
   "ve:groups": ["vatch"],
 
   //"ve:meta":{"ve:dependencies": ["vatch/Watcher", "vatch/Walker"]}
 }
-let thing = new Thing(config)
+let smagMainWorker = new Thing(config)
 //console.log("thing : ", thing)
 
 app.use(express.static('public'));
@@ -80,9 +80,22 @@ io.on('connection', (socket) => {
       }else{
         try {
           if (!fs.existsSync(msg)) {
-            fs.writeFile(msg, "", (err) => {
+            let extension = msg.split('.')[1]
+
+            console.log("ext", extension)
+            if (extension == undefined ){
+              let thing = new Thing({
+                "ve:name" : msg.substring(msg.lastIndexOf('/') + 1),
+                "ve:path": msg,
+                "ve:meta": {"ve:created": Date.now()}
+              })
+              content = JSON.stringify(thing.data, null, 2)
+            }else{
+              content = ""
+            }
+            fs.writeFile(msg, content, (err) => {
               if (err) throw err;
-              console.log("The blank file was succesfully saved!");
+              console.log("The file was succesfully saved!");
             });
           }
         } catch (err) {

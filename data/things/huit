@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "@vocab": "https://www.w3.org/ns/activitystreams",
+    "as": "https://www.w3.org/ns/activitystreams",
+    "ve": "https://scenaristeur.github.io/verse/",
+    "@id": "id",
+    "@type": "type"
+  },
+  "id": "3d17380c-e502-44a9-a00c-d4a08aa1f4cd",
+  "ve:name": "huit",
+  "type": [
+    "server"
+  ],
+  "ve:age": -1,
+  "ve:description": "This is the main worker of a vatch system",
+  "ve:groups": [
+    "vatch"
+  ],
+  "ve:properties": [],
+  "ve:actions": [],
+  "ve:links": [],
+  "ve:meta": {
+    "ve:created": 1640989303327
+  },
+  "ve:path": "data/things/huit"
+}

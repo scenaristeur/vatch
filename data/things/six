@@ -1,0 +1,26 @@
+{
+  "@context": {
+    "@vocab": "https://www.w3.org/ns/activitystreams",
+    "as": "https://www.w3.org/ns/activitystreams",
+    "ve": "https://scenaristeur.github.io/verse/",
+    "@id": "id",
+    "@type": "type"
+  },
+  "id": "eb83974a-88ec-48de-83da-b659c29d1f42",
+  "ve:name": "Smag",
+  "type": [
+    "server"
+  ],
+  "ve:age": -1,
+  "ve:description": "This is the main worker of a vatch system",
+  "ve:groups": [
+    "vatch"
+  ],
+  "ve:properties": [],
+  "ve:actions": [],
+  "ve:links": [],
+  "ve:meta": {
+    "ve:created": 1640989001067
+  },
+  "ve:path": "data/things/six"
+}
