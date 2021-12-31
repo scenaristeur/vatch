@@ -46,7 +46,7 @@ let config = {
   //"ve:meta":{"ve:dependencies": ["vatch/Watcher", "vatch/Walker"]}
 }
 let smagMainWorker = new Thing(config)
-//console.log("thing : ", thing)
+console.log("smag : ", smagMainWorker.getData())
 
 app.use(express.static('public'));
 app.get('/', (req, res) => {
@@ -89,7 +89,7 @@ io.on('connection', (socket) => {
                 "ve:path": msg,
                 "ve:meta": {"ve:created": Date.now()}
               })
-              content = JSON.stringify(thing.data, null, 2)
+              content = JSON.stringify(thing.getData(), null, 2)
             }else{
               content = ""
             }

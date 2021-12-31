@@ -1,0 +1,22 @@
+{
+  "data": {
+    "@context": {
+      "@vocab": "https://www.w3.org/ns/activitystreams",
+      "as": "https://www.w3.org/ns/activitystreams",
+      "ve": "https://scenaristeur.github.io/verse/",
+      "@id": "id",
+      "@type": "type"
+    },
+    "id": "b85b655c-57fc-4e33-aa1a-00c3c09c8365",
+    "ve:name": "nine",
+    "type": "thing",
+    "ve:age": -1,
+    "ve:properties": [],
+    "ve:actions": [],
+    "ve:links": [],
+    "ve:meta": {
+      "ve:created": 1640992803220
+    },
+    "ve:path": "data/things/nine"
+  }
+}
