@@ -5,6 +5,7 @@ let root = './data'
 /* mais bloque parfois le renommage par
 /* l'explorateur quand l'appli est lancée, à voir*/
 
+
 const open = require('open');
 const fs = require('fs')
 const path = require('path');
@@ -19,7 +20,15 @@ const io = require("socket.io")(server, {
   }
 });
 
-if (path.sep === "\\") {  console.log("Windows System");} else {console.log("Not a Windows System");}
+console.log(path.sep)
+if (path.sep === "\\") {
+  console.log("Windows System");
+} else {
+  console.log("Not a Windows System");
+}
+
+
+
 
 // list https://stackoverflow.com/questions/5827612/node-js-fs-readdir-recursive-directory-search
 //var fs = require('fs');
@@ -27,31 +36,51 @@ if (path.sep === "\\") {  console.log("Windows System");} else {console.log("Not
 
 let storage = {root: root, folders: [], files: []}
 
+// var walk = function(dir, done) {
+//   var results = [];
+//   fs.readdir(dir, function(err, list) {
+//     if (err) return done(err);
+//     var i = 0;
+//     (function next() {
+//       var file = list[i++];
+//       if (!file) return done(null, results);
+//       file = path.resolve(dir, file);
+//       fs.stat(file, function(err, stat) {
+//         if (stat && stat.isDirectory()) {
+//           walk(file, function(err, res) {
+//             results = results.concat(res);
+//             next();
+//           });
+//         } else {
+//           results.push(file);
+//           next();
+//         }
+//       });
+//     })();
+//   });
+// };
+
+
+
+
+
+
+// const io = new Server(server);
 const Watcher = require('./modules/watcher')
 let watcher = new Watcher(io, root)
 const Walker = require('./modules/walker')
 let walker = new Walker(io, root)
 const FileType = require('file-type');
+
 let users = {}
-
-const Thing = require('./modules/thing')
-//let thing = new Thing({id : "test"})
-// presque un package.json
-let config = {
-  "ve:name": "Smag",
-  type : ["server"], //pas de ve car type jsonld  /activityStreams ? 
-  "ve:description": "This is the main worker of a vatch system",
-  "ve:groups": ["vatch"],
-
-  //"ve:meta":{"ve:dependencies": ["vatch/Watcher", "vatch/Walker"]}
-}
-let thing = new Thing(config)
-//console.log("thing : ", thing)
 
 app.use(express.static('public'));
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
+// app.get('/babylon', (req, res) => {
+//   res.sendFile(__dirname + '/public/babylon.html');
+// });
 
 io.on('connection', (socket) => {
   users[socket.id] = {connexion: new Date()}
@@ -61,7 +90,7 @@ io.on('connection', (socket) => {
   io.emit('users', users); //envoyer à tous
   walker.start(root, function(err, results) {
     if (err) throw err;
-    //    console.log(results);
+    console.log(results);
     socket.emit('init', {pathsep: path.sep, welcome: "hi", users: users_nb, folder: results}); //envoyer au nouveau
   });
   socket.emit('watcher event', watcher.paths)
@@ -155,34 +184,5 @@ server.listen(3000, () => {
   console.log('server running at localhost:3000');
   console.log('1. First time client install: `npm run client:install`')
   console.log('2. later client update: `npm run client:update`');
-  // open('http://localhost:3000/vatch-vue');
+ open('http://localhost:3000/vatch-vue');
 });
-
-
-// var walk = function(dir, done) {
-//   var results = [];
-//   fs.readdir(dir, function(err, list) {
-//     if (err) return done(err);
-//     var i = 0;
-//     (function next() {
-//       var file = list[i++];
-//       if (!file) return done(null, results);
-//       file = path.resolve(dir, file);
-//       fs.stat(file, function(err, stat) {
-//         if (stat && stat.isDirectory()) {
-//           walk(file, function(err, res) {
-//             results = results.concat(res);
-//             next();
-//           });
-//         } else {
-//           results.push(file);
-//           next();
-//         }
-//       });
-//     })();
-//   });
-// };
-
-// app.get('/babylon', (req, res) => {
-//   res.sendFile(__dirname + '/public/babylon.html');
-// });

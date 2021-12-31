@@ -2,28 +2,35 @@
 
 the new file/graph explorer generation
 
-- vatch is a server that listen for change in your system through chokidar and send it through socket.io to the client
+- vatch is a server that listen for change in your system through chokidar and send it through socket.io to the webapp client
 
-# vatch parts
-- vatch server : https://github.com/scenaristeur/vatch
-- vatch-vue : a Vuejs client app for vatch server : https://github.com/scenaristeur/vatch-vue
+# vatch has 2 parts
+- vatch server (https://github.com/scenaristeur/vatch)
+- vatch-vue : a Vuejs client app for vatch server (https://github.com/scenaristeur/vatch-vue)
 
-First launch the server on port 3000
+# First launch the server on port 3000
 
 - prerequis : (nodejs)[https://nodejs.org/en/]
 
 - install the server :
 ```
-git clone https://github.com/scenaristeur/vatch.git // clone the repo
-cd vatch // move to the folder
-npm install // install node_modules
-npm run client:install // install the client on the first time
-// or 'npm run client:update' to update the client the next time you run the server
-node . //run the server
-// explore on http://localhost:3000
-```
+// clone the repo
+git clone https://github.com/scenaristeur/vatch.git
+// move to the folder
+cd vatch
+// install node_modules
+npm install
+// install the client on the first time
+npm run client:install
+// or to update the client the next time you run the server
+ npm run client:update
+//run the server
+node .
 
-The client is managed as a submodule in another repository :
+```
+- explore on `http://localhost:3000`
+
+- The client is managed as a submodule in another repository :
 
 To customize / contribute to the client :
 ```
@@ -43,30 +50,30 @@ on index.js on vatch
 server.listen(3000, () => { // ok for local network on linux
   console.log('listening on *:3000');
   });
-```
+  ```
 
-on index.html on vatch-vite
+  on index.html on vatch-vite
   ```
   var socket = io(':3000');
   ```
-_______________________________________________________________________
+  _______________________________________________________________________
 
 # submodule
 
-```
-git submodule add -b gh-pages https://github.com/scenaristeur/vatch-vue.git ./public
-```
+  ```
+  git submodule add -b gh-pages https://github.com/scenaristeur/vatch-vue.git ./public
+  ```
 
-  # vatch on Android
+# vatch on Android with Termux
   - install Termux (from https://wiki.termux.com/wiki/Main_Page from f-Droid as it seems there are some issue with GooglePlay)
   - in Termux, run ```apt update && apt upgrade```, ```apt install coreutils
   nodejs git```
   - then run the vatch server installation process.
-client must will be availble at http://localhost:3000 on your mobile
+  client must will be availble at http://localhost:3000 on your mobile
   - if you want to connect from another device on the local network,
-   grab your phone ip with ```ifconfig```
+  grab your phone ip with ```ifconfig```
   - Want to create a shortcut for vatch ? ->
-   install Termux:Widget https://wiki.termux.com/wiki/Termux:Widget
+  install Termux:Widget https://wiki.termux.com/wiki/Termux:Widget
   and    use termux-shortcuts.sh or create vatch.sh in .shortcuts/tasks/
   ```
   mkdir -p /data/data/com.termux/files/home/.shortcuts/tasks
@@ -88,29 +95,6 @@ client must will be availble at http://localhost:3000 on your mobile
   #!/usr/bin/bash
   am start --user 0 -n com.android.chrome/com.google.android.apps.chrome.Main http://localhost:3000
   ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   - https://stackoverflow.com/questions/59478402/how-do-i-send-image-to-server-via-socket-io
 
