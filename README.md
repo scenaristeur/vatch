@@ -68,6 +68,21 @@ server.listen(3000, () => { // ok for local network on linux
 - https://github.com/passport/todos-express-password (bim/bo)
 - todo with credential manager https://github.com/passport/todos-express-password-credential-management
 
+
+# graphql Post /sqlite
+- https://dev.to/jgilbertcastro/build-a-simple-blog-with-graphql-node-js-sqlite-and-vue-angular-or-reactjs-3923
+- https://dev.to/jgilbertcastro/build-a-simple-blog-with-graphql-node-js-sqlite-and-vue-angular-or-reactjs-part-2-201j
+
+
+________________________________________________
+
+
+
+
+
+
+
+
 # vatch on Android with Termux
   - install Termux (from https://wiki.termux.com/wiki/Main_Page from f-Droid as it seems there are some issue with GooglePlay)
   - in Termux, run ```apt update && apt upgrade```, ```apt install coreutils
